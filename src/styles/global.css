@@ -1,0 +1,2296 @@
+/* =====================================
+DMV DECK DESIGNS GLOBAL CSS
+PART 1
+RESET + TYPOGRAPHY + HEADER + NAVIGATION
+===================================== */
+
+
+/* GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+
+/* =====================================
+RESET
+===================================== */
+
+
+* {
+
+box-sizing:border-box;
+
+}
+
+
+
+html {
+
+scroll-behavior:smooth;
+
+}
+
+
+
+body {
+
+margin:0;
+
+font-family:'Roboto', Arial, sans-serif;
+
+color:#222;
+
+background:#fff;
+
+line-height:1.6;
+
+}
+
+
+
+img {
+
+max-width:100%;
+
+display:block;
+
+}
+
+
+
+
+
+/* =====================================
+GLOBAL TYPOGRAPHY
+===================================== */
+
+
+h1,
+h2,
+h3 {
+
+font-family:'Oswald', sans-serif;
+
+text-align:center;
+
+margin-top:0;
+
+color:#111;
+
+}
+
+
+
+h1 {
+
+font-size:48px;
+
+line-height:1.2;
+
+}
+
+
+
+h2 {
+
+font-size:34px;
+
+margin-bottom:25px;
+
+}
+
+
+
+h3 {
+
+font-size:24px;
+
+}
+
+
+
+p {
+
+text-align:center;
+
+font-size:18px;
+
+}
+
+
+
+
+
+/* =====================================
+HEADER
+===================================== */
+
+
+.site-header {
+
+background:white;
+
+border-bottom:1px solid #ddd;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+
+
+.nav-container {
+
+max-width:1200px;
+
+margin:auto;
+
+padding:15px 25px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+
+
+
+
+/* =====================================
+LOGO
+===================================== */
+
+.logo-container {
+
+display:flex;
+align-items:center;
+justify-content:flex-start;
+
+}
+
+
+.site-logo {
+
+width:170px;
+height:auto;
+max-height:90px;
+object-fit:contain;
+display:block;
+
+}
+
+
+
+
+
+/* NAVIGATION */
+
+
+.desktop-nav {
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+}
+
+
+
+.desktop-nav a {
+
+text-decoration:none;
+
+color:#111;
+
+font-weight:600;
+
+font-size:16px;
+
+white-space:nowrap;
+
+}
+
+
+
+.desktop-nav a:hover {
+
+color:#c8102e;
+
+}
+
+
+
+
+
+/* CONSULTATION BUTTON */
+
+
+.consult-button {
+
+background:#c8102e;
+
+color:white !important;
+
+padding:12px 18px;
+
+border-radius:6px;
+
+font-weight:700;
+
+}
+
+
+
+.consult-button:hover {
+
+background:#a50d24;
+
+color:white!important;
+
+}
+
+
+
+
+
+
+.mobile-toggle {
+
+display:none;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+LOCATION DROPDOWN
+===================================== */
+
+
+.dropdown {
+
+position:relative;
+
+}
+
+
+
+.drop-button {
+
+color:#111;
+
+text-decoration:none;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+
+
+.dropdown-menu {
+
+display:none;
+
+position:absolute;
+
+top:100%;
+
+left:0;
+
+background:white;
+
+width:250px;
+
+padding:10px 0;
+
+border-radius:8px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+
+
+.dropdown.open .dropdown-menu {
+
+display:block;
+
+}
+
+
+
+.dropdown-menu a {
+
+display:block;
+
+padding:12px 20px;
+
+white-space:nowrap;
+
+}
+
+
+
+.dropdown-menu a:hover {
+
+background:#f5f5f5;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+PAGE STRUCTURE
+===================================== */
+
+
+main {
+
+width:100%;
+
+}
+
+
+
+.page-wrapper,
+.services-page,
+.location-page,
+.contact-page,
+.home-page {
+
+max-width:1200px;
+
+margin:auto;
+
+padding:40px 25px;
+
+text-align:center;
+
+}
+
+
+
+.page-hero {
+
+text-align:center;
+
+padding:50px 20px;
+
+}
+
+
+
+.page-section {
+
+text-align:center;
+
+padding:50px 20px;
+
+}
+/* =====================================
+PART 2
+BUTTONS + CARDS + PURCHASE + FAQ + CONTACT + FOOTER
+===================================== */
+
+
+
+
+
+/* =====================================
+BUTTONS
+===================================== */
+
+
+.button {
+
+display:inline-block;
+
+background:#c8102e;
+
+color:white;
+
+padding:14px 25px;
+
+border-radius:6px;
+
+text-decoration:none;
+
+margin:10px;
+
+font-weight:700;
+
+}
+
+
+
+.button:hover {
+
+background:#a50d24;
+
+}
+
+
+
+.secondary {
+
+background:#1b365d;
+
+}
+
+
+
+.button-group {
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+CARDS
+===================================== */
+
+
+.cards {
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+max-width:1100px;
+
+margin:40px auto;
+
+}
+
+
+
+.cards > div {
+
+background:white;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+
+
+.cards ul {
+
+text-align:left;
+
+}
+
+
+
+
+
+/* CENTER FOURTH SERVICES CARD */
+
+
+.services-page .cards > div:last-child:nth-child(4) {
+
+grid-column:2;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+PURCHASE PACKAGES
+===================================== */
+
+
+.packages {
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+max-width:1200px;
+
+margin:50px auto;
+
+}
+
+
+
+.package-card {
+
+border:1px solid #ddd;
+
+padding:35px;
+
+border-radius:12px;
+
+text-align:center;
+
+background:white;
+
+}
+
+
+
+.package-card ul {
+
+text-align:left;
+
+}
+
+
+
+.package-card.popular {
+
+border:3px solid #c8102e;
+
+transform:scale(1.03);
+
+}
+
+
+
+.popular-label {
+
+background:#c8102e;
+
+color:white;
+
+padding:8px;
+
+border-radius:5px;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+FAQ
+===================================== */
+
+
+.faq-section {
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+
+
+.faq-item {
+
+padding:25px;
+
+border-bottom:1px solid #ddd;
+
+text-align:center;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+CONTACT PAGE
+===================================== */
+
+
+.contact-box {
+
+text-align:center;
+
+padding:50px 20px;
+
+}
+
+
+
+.contact-form {
+
+max-width:700px;
+
+margin:40px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+
+width:100%;
+
+padding:15px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:16px;
+
+font-family:'Roboto',sans-serif;
+
+}
+
+
+
+.contact-form textarea {
+
+resize:vertical;
+
+}
+
+
+
+.contact-form label {
+
+font-weight:bold;
+
+color:#1b365d;
+
+text-align:left;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+FOOTER
+===================================== */
+
+
+footer {
+
+background:#1b365d;
+
+color:white;
+
+padding:40px 20px;
+
+text-align:center;
+
+}
+
+
+
+footer h2,
+footer h3 {
+
+color:white;
+
+}
+
+
+
+footer a {
+
+color:white;
+
+text-decoration:none;
+
+}
+
+
+
+footer a:hover {
+
+color:#c8102e;
+
+}
+
+
+
+.footer-links {
+
+list-style:none;
+
+padding:0;
+
+}
+
+
+
+.footer-links li {
+
+margin:10px;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+SERVICE / LOCATION CENTERING
+===================================== */
+
+
+.location-page,
+.services-page {
+
+text-align:center;
+
+}
+
+
+
+.location-page p,
+.services-page p {
+
+max-width:900px;
+
+margin:20px auto;
+
+}
+
+/* =====================================
+PROJECT PLANNER
+===================================== */
+
+
+.project-planner {
+
+max-width:1000px;
+
+margin:0 auto;
+
+padding:60px 25px;
+
+text-align:center;
+
+}
+
+
+
+.project-planner h1,
+.project-planner h2,
+.project-planner h3 {
+
+text-align:center;
+
+}
+
+
+
+.project-planner p {
+
+max-width:850px;
+
+margin:20px auto;
+
+text-align:center;
+
+}
+
+
+
+
+
+/* FORM */
+
+
+.project-planner form {
+
+width:100%;
+
+max-width:800px;
+
+margin:40px auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+
+
+
+.project-planner input,
+.project-planner select,
+.project-planner textarea {
+
+width:100%;
+
+max-width:800px;
+
+padding:15px;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+margin-bottom:15px;
+
+font-size:16px;
+
+text-align:center;
+
+}
+
+
+
+
+.project-planner textarea {
+
+min-height:150px;
+
+}
+
+
+
+
+/* CHECKBOX AND RADIO OPTIONS */
+
+
+.project-planner fieldset {
+
+width:100%;
+
+max-width:800px;
+
+margin:20px auto;
+
+border:none;
+
+text-align:center;
+
+}
+
+
+
+.project-planner legend {
+
+font-family:'Oswald',sans-serif;
+
+font-size:24px;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+.project-planner label {
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+margin:12px auto;
+
+font-size:18px;
+
+text-align:center;
+
+}
+
+
+
+.project-planner input[type="checkbox"],
+.project-planner input[type="radio"] {
+
+width:auto;
+
+margin:0;
+
+}
+
+
+
+
+
+/* SUMMARY */
+
+
+.planner-summary {
+
+width:100%;
+
+max-width:800px;
+
+margin:30px auto;
+
+background:#f5f7fa;
+
+padding:30px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+
+
+
+.recommended-package {
+
+width:100%;
+
+max-width:800px;
+
+margin:30px auto;
+
+background:#1b365d;
+
+color:white;
+
+padding:30px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+
+
+
+
+/* BUTTONS */
+
+
+.project-planner button,
+.project-planner .button {
+
+display:block;
+
+margin:20px auto;
+
+text-align:center;
+
+}
+
+/* =====================================
+PREMIUM CONSULTATION PAGE
+===================================== */
+
+
+.premium-contact {
+
+background:#f5f7fa;
+
+padding-bottom:60px;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.consultation-hero {
+
+background:#1b365d;
+
+color:white;
+
+padding:80px 25px;
+
+text-align:center;
+
+border-radius:0 0 20px 20px;
+
+}
+
+
+
+.hero-content {
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+
+
+.hero-tag {
+
+display:inline-block;
+
+background:#c8102e;
+
+color:white;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:bold;
+
+letter-spacing:1px;
+
+margin-bottom:25px;
+
+}
+
+
+
+.consultation-hero h1 {
+
+color:white;
+
+font-size:56px;
+
+}
+
+
+
+.consultation-hero h2 {
+
+color:white;
+
+font-size:34px;
+
+}
+
+
+
+.consultation-hero p {
+
+color:white;
+
+max-width:800px;
+
+margin:25px auto;
+
+font-size:20px;
+
+}
+
+
+
+
+
+
+
+/* HERO BUTTONS */
+
+
+.hero-buttons {
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+
+
+
+
+
+
+/* CONSULTATION CARD */
+
+
+.consultation-card {
+
+max-width:1000px;
+
+margin:50px auto;
+
+background:white;
+
+border-radius:15px;
+
+padding:40px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:40px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+.price-box {
+
+text-align:center;
+
+background:#1b365d;
+
+color:white;
+
+border-radius:12px;
+
+padding:40px;
+
+}
+
+
+
+.price-box h2 {
+
+color:white;
+
+}
+
+
+
+.price {
+
+font-family:'Oswald',sans-serif;
+
+font-size:70px;
+
+font-weight:bold;
+
+color:#ffcc00;
+
+}
+
+
+
+.price-box p {
+
+color:white;
+
+}
+
+
+
+.benefits {
+
+text-align:left;
+
+}
+
+
+
+.benefits h3 {
+
+text-align:center;
+
+}
+
+
+
+.benefits ul {
+
+padding-left:20px;
+
+font-size:18px;
+
+}
+
+
+
+.benefits li {
+
+margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+CONTACT DETAILS
+===================================== */
+
+
+.contact-details {
+
+max-width:1100px;
+
+margin:40px auto;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+
+
+.contact-details div {
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+text-align:center;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.contact-details h3 {
+
+color:#1b365d;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+FORM SECTION
+===================================== */
+
+
+.form-section {
+
+max-width:850px;
+
+margin:60px auto;
+
+background:white;
+
+padding:45px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+.form-section h2 {
+
+color:#1b365d;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+NEXT STEPS
+===================================== */
+
+
+.next-steps {
+
+max-width:1100px;
+
+margin:60px auto;
+
+text-align:center;
+
+}
+
+
+
+.steps {
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+
+
+.steps div {
+
+background:white;
+
+padding:30px 15px;
+
+border-radius:12px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+font-weight:bold;
+
+}
+
+
+
+.steps strong {
+
+display:block;
+
+background:#c8102e;
+
+color:white;
+
+width:45px;
+
+height:45px;
+
+line-height:45px;
+
+border-radius:50%;
+
+margin:0 auto 15px;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+WHY CHOOSE
+===================================== */
+
+
+.why-section {
+
+max-width:1000px;
+
+margin:60px auto;
+
+text-align:center;
+
+}
+
+
+
+.trust-grid {
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+
+
+.trust-grid div {
+
+background:#1b365d;
+
+color:white;
+
+padding:25px;
+
+border-radius:10px;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+PAYMENT
+===================================== */
+
+
+.payment-box {
+
+max-width:850px;
+
+margin:60px auto;
+
+background:#1b365d;
+
+color:white;
+
+padding:45px;
+
+border-radius:15px;
+
+text-align:center;
+
+}
+
+
+
+.payment-box h2 {
+
+color:white;
+
+}
+
+
+
+.payment-box p {
+
+color:white;
+
+}
+
+
+
+.payment-box .button {
+
+background:#c8102e;
+
+color:white;
+
+}
+
+
+
+.payment-box .button:hover {
+
+background:#a50d24;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+MOBILE RESPONSIVE
+===================================== */
+
+
+@media(max-width:950px){
+
+
+
+h1 {
+
+font-size:36px;
+
+}
+
+
+
+h2 {
+
+font-size:28px;
+
+}
+
+
+
+.desktop-nav {
+
+display:none;
+
+}
+
+
+
+.mobile-toggle {
+
+display:block;
+
+font-size:28px;
+
+background:none;
+
+border:none;
+
+}
+
+
+
+.cards,
+.packages {
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.services-page .cards > div:last-child:nth-child(4){
+
+grid-column:auto;
+
+}
+
+
+
+.package-card.popular {
+
+transform:none;
+
+}
+
+
+
+.consultation-hero h1 {
+
+font-size:38px;
+
+}
+
+
+
+.consultation-hero h2 {
+
+font-size:26px;
+
+}
+
+
+
+.consultation-card {
+
+grid-template-columns:1fr;
+
+margin:30px 15px;
+
+}
+
+
+
+.contact-details {
+
+grid-template-columns:1fr;
+
+margin:30px 15px;
+
+}
+
+
+
+.form-section {
+
+margin:30px 15px;
+
+padding:25px;
+
+}
+
+
+
+.steps {
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.trust-grid {
+
+grid-template-columns:1fr;
+
+}
+
+
+
+}
+/* =====================================
+PROJECT PLANNER COMPONENT CENTER FIX
+===================================== */
+
+
+.project-planner {
+
+text-align:center;
+
+}
+
+
+
+.planner-wrapper {
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+
+.planner-wrapper > * {
+
+width:100%;
+
+max-width:850px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+
+
+
+.planner-wrapper form {
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+
+
+
+.planner-wrapper input,
+.planner-wrapper select,
+.planner-wrapper textarea {
+
+width:100%;
+
+max-width:800px;
+
+text-align:center;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+
+
+
+.planner-wrapper label {
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+width:100%;
+
+text-align:center;
+
+}
+
+
+
+
+.planner-wrapper input[type="checkbox"],
+.planner-wrapper input[type="radio"] {
+
+width:auto;
+
+}
+
+
+
+
+.planner-wrapper fieldset {
+
+border:none;
+
+width:100%;
+
+max-width:800px;
+
+margin:20px auto;
+
+text-align:center;
+
+}
+
+
+
+
+.planner-wrapper legend {
+
+text-align:center;
+
+width:100%;
+
+font-family:'Oswald',sans-serif;
+
+font-size:24px;
+
+}
+
+
+
+
+.planner-wrapper button,
+.planner-wrapper .button {
+
+display:block;
+
+margin:20px auto;
+
+}
+
+
+
+
+.planner-wrapper .project-summary,
+.planner-wrapper .planner-summary,
+.planner-wrapper .recommended-package {
+
+width:100%;
+
+max-width:800px;
+
+margin:30px auto;
+
+text-align:center;
+
+}
+/* =====================================
+PROJECT PLANNER COMPONENT FINAL ALIGNMENT
+===================================== */
+
+
+/* Main container */
+
+.project-planner .planner-container {
+
+max-width:900px;
+
+margin:0 auto;
+
+padding:40px 20px;
+
+text-align:center;
+
+}
+
+
+
+/* Progress */
+
+.project-planner .planner-progress {
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+
+
+.project-planner .progress-bar {
+
+height:10px;
+
+background:#ddd;
+
+border-radius:20px;
+
+overflow:hidden;
+
+max-width:800px;
+
+margin:20px auto;
+
+}
+
+
+
+.project-planner #progress-fill {
+
+height:100%;
+
+background:#c8102e;
+
+width:0%;
+
+}
+
+
+
+
+
+/* Each question step */
+
+.project-planner .planner-step {
+
+text-align:center;
+
+}
+
+
+
+.project-planner .planner-step h2 {
+
+text-align:center;
+
+}
+
+
+
+
+
+.project-planner .planner-step p {
+
+text-align:center;
+
+}
+
+
+
+
+
+/* RADIO AND CHECKBOX OPTIONS FIX */
+
+.project-planner .planner-step label {
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+gap:12px;
+
+
+width:auto;
+
+
+margin:15px auto;
+
+
+font-size:18px;
+
+
+text-align:center;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+
+/* Keep boxes normal size */
+
+.project-planner .planner-step input[type="radio"],
+.project-planner .planner-step input[type="checkbox"] {
+
+
+width:auto;
+
+
+margin:0;
+
+
+}
+
+
+
+
+/* Contact fields */
+
+.project-planner .planner-step input[type="text"],
+.project-planner .planner-step input[type="email"],
+.project-planner .planner-step input[type="tel"] {
+
+
+display:block;
+
+width:100%;
+
+max-width:700px;
+
+margin:15px auto;
+
+padding:15px;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+text-align:center;
+
+font-size:16px;
+
+}
+
+
+
+
+/* Summary */
+
+.project-planner #summary,
+.project-planner #recommendation {
+
+
+max-width:700px;
+
+margin:30px auto;
+
+padding:30px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+
+
+.project-planner #summary {
+
+
+background:#f5f7fa;
+
+}
+
+
+
+
+.project-planner #recommendation {
+
+
+background:#1b365d;
+
+color:white;
+
+}
+
+
+
+.project-planner #recommendation h3 {
+
+
+color:white;
+
+}
+
+
+
+/* Buttons */
+
+.project-planner .planner-buttons {
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin:35px auto;
+
+}
+
+
+
+
+.project-planner .planner-button {
+
+
+background:#c8102e;
+
+color:white;
+
+padding:14px 25px;
+
+border-radius:6px;
+
+text-decoration:none;
+
+font-weight:700;
+
+display:inline-block;
+
+}
+
+
+
+.project-planner .planner-button:hover {
+
+
+background:#a50d24;
+
+
+}
+
+
+
+
+
+/* Navigation */
+
+.project-planner .navigation-buttons {
+
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin:30px auto;
+
+
+}
+
+
+
+.project-planner .navigation-buttons button {
+
+
+background:#1b365d;
+
+color:white;
+
+border:none;
+
+padding:12px 25px;
+
+border-radius:6px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+
+}
+/* =====================================
+PROJECT PLANNER STEP CONTROL
+===================================== */
+
+
+.project-planner .planner-step {
+
+display:none;
+
+}
+
+
+
+.project-planner .planner-step.active {
+
+display:block;
+
+animation:fadeStep .3s ease;
+
+}
+
+
+
+@keyframes fadeStep {
+
+from {
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* =====================================
+MOBILE NAVIGATION
+===================================== */
+
+.mobile-toggle {
+
+display:none;
+
+font-size:32px;
+
+background:none;
+
+border:none;
+
+cursor:pointer;
+
+color:#1b365d;
+
+}
+
+
+/* MOBILE MENU */
+
+.mobile-nav {
+
+display:none;
+
+flex-direction:column;
+
+background:white;
+
+width:100%;
+
+padding:20px;
+
+border-top:1px solid #ddd;
+
+text-align:center;
+
+}
+
+
+.mobile-nav a {
+
+padding:12px;
+
+text-decoration:none;
+
+color:#111;
+
+font-weight:600;
+
+}
+
+
+/* MOBILE VIEW */
+
+@media(max-width:950px){
+
+
+.desktop-nav {
+
+display:none;
+
+}
+
+
+.mobile-toggle {
+
+display:block;
+
+}
+
+
+.mobile-nav.open {
+
+display:flex;
+
+}
+
+
+}

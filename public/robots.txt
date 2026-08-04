@@ -1,0 +1,6 @@
+User-agent: *
+
+Allow: /
+
+
+Sitemap: https://dmvdeckdesigns.com/sitemap.xml

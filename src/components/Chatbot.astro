@@ -1,0 +1,767 @@
+<div id="chatbot-container">
+
+
+<button id="chatbot-toggle">
+
+💬
+
+</button>
+
+
+
+
+
+
+
+<div id="chatbot-window">
+
+
+
+
+
+<div class="chat-header">
+
+
+<span>
+DMV Deck Designs Assistant
+</span>
+
+
+<button id="chat-close">
+×
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div id="chat-messages">
+
+
+
+
+
+<div class="bot-message">
+
+Hi! 👋 Welcome to DMV Deck Designs. I can help you start your deck project, choose the right package, and answer questions about our services.
+
+</div>
+
+
+
+
+
+<div class="quick-buttons">
+
+
+<button data-message="project">
+
+Start My Project
+
+</button>
+
+
+
+<button data-message="packages">
+
+View Packages
+
+</button>
+
+
+
+<button data-message="areas">
+
+Service Areas
+
+</button>
+
+
+
+<button data-message="question">
+
+Ask A Question
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+const toggle = document.getElementById(
+"chatbot-toggle"
+);
+
+
+const chatWindow = document.getElementById(
+"chatbot-window"
+);
+
+
+const closeButton = document.getElementById(
+"chat-close"
+);
+
+
+const messages = document.getElementById(
+"chat-messages"
+);
+
+
+
+
+
+toggle?.addEventListener(
+"click",
+()=>{
+
+
+chatWindow.classList.toggle(
+"open"
+);
+
+
+});
+
+
+
+
+
+closeButton?.addEventListener(
+"click",
+()=>{
+
+
+chatWindow.classList.remove(
+"open"
+);
+
+
+});
+
+
+
+
+
+
+
+
+function addMessage(text,type="bot"){
+
+
+const message = document.createElement(
+"div"
+);
+
+
+
+message.className =
+type === "user"
+? "user-message"
+: "bot-message";
+
+
+
+message.innerHTML = text;
+
+
+
+messages.appendChild(
+message
+);
+
+
+
+messages.scrollTop =
+messages.scrollHeight;
+
+
+}
+
+
+
+
+
+
+
+
+document
+.querySelectorAll("[data-message]")
+.forEach(button=>{
+
+
+button.addEventListener(
+"click",
+()=>{
+
+
+const choice =
+button.dataset.message;
+
+
+
+addMessage(
+button.innerText,
+"user"
+);
+
+
+
+
+setTimeout(()=>{
+
+
+
+
+
+
+if(choice==="project"){
+
+
+addMessage(`
+
+
+Great! Let's start your deck project.
+
+
+<br><br>
+
+
+During your consultation we review:
+
+
+<br><br>
+
+
+✓ Project goals
+
+<br>
+
+✓ Property conditions
+
+<br>
+
+✓ Deck design ideas
+
+<br>
+
+✓ Material options
+
+<br>
+
+✓ Permit requirements
+
+
+<br><br>
+
+
+Ready to begin?
+
+
+<br><br>
+
+
+<button onclick="window.location.href='/contact'">
+
+Request My Consultation
+
+</button>
+
+
+`);
+
+
+}
+
+
+
+
+
+
+
+
+if(choice==="packages"){
+
+
+addMessage(`
+
+
+Our professional deck design packages:
+
+
+<br><br>
+
+
+<strong>
+Standard Package - $499
+</strong>
+
+
+<br>
+
+Professional CAD drawings and permit-ready design documents.
+
+
+<br><br>
+
+
+<strong>
+Premium Package - $999
+</strong>
+
+
+<br>
+
+Includes certified structural drawings and enhanced documentation.
+
+
+<br><br>
+
+
+<button onclick="window.location.href='/purchase'">
+
+View Packages
+
+</button>
+
+
+`);
+
+
+}
+
+
+
+
+
+
+
+
+
+if(choice==="areas"){
+
+
+addMessage(`
+
+
+DMV Deck Designs provides professional deck design services throughout:
+
+
+<br><br>
+
+
+✓ Maryland
+
+<br>
+
+✓ Northern Virginia
+
+<br>
+
+✓ Washington DC
+
+<br>
+
+✓ Nationwide Design Services
+
+
+`);
+
+
+}
+
+
+
+
+
+
+
+
+
+if(choice==="question"){
+
+
+addMessage(`
+
+
+I can help answer questions about:
+
+
+<br><br>
+
+
+✓ Deck design packages
+
+<br>
+
+✓ CAD drawings
+
+<br>
+
+✓ Permit-ready plans
+
+<br>
+
+✓ Certified structural drawings
+
+<br>
+
+✓ Consultation process
+
+
+<br><br>
+
+
+For project-specific questions, start your consultation here:
+
+
+<br><br>
+
+
+<button onclick="window.location.href='/contact'">
+
+Start My Project
+
+</button>
+
+
+`);
+
+
+}
+
+
+
+
+
+
+},400);
+
+
+
+});
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<style>
+
+
+#chatbot-container {
+
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+z-index:99999;
+
+
+}
+
+
+
+
+
+#chatbot-toggle {
+
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+border:none;
+
+background:#c8102e;
+
+color:white;
+
+font-size:30px;
+
+cursor:pointer;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+
+#chatbot-window {
+
+
+display:none;
+
+position:absolute;
+
+right:0;
+
+bottom:80px;
+
+width:360px;
+
+height:520px;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 10px 35px rgba(0,0,0,.3);
+
+
+}
+
+
+
+
+
+#chatbot-window.open {
+
+
+display:flex;
+
+flex-direction:column;
+
+
+}
+
+
+
+
+
+
+.chat-header {
+
+
+background:#1b365d;
+
+color:white;
+
+padding:15px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+font-weight:bold;
+
+
+}
+
+
+
+
+
+
+#chat-close {
+
+
+background:none;
+
+border:none;
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+#chat-messages {
+
+
+padding:20px;
+
+overflow-y:auto;
+
+flex:1;
+
+
+}
+
+
+
+
+
+.bot-message {
+
+
+background:#f1f1f1;
+
+padding:12px;
+
+border-radius:10px;
+
+margin-bottom:15px;
+
+text-align:left;
+
+
+}
+
+
+
+
+
+.user-message {
+
+
+background:#c8102e;
+
+color:white;
+
+padding:12px;
+
+border-radius:10px;
+
+margin-bottom:15px;
+
+text-align:right;
+
+
+}
+
+
+
+
+
+
+
+.quick-buttons button,
+.bot-message button {
+
+
+display:block;
+
+width:100%;
+
+margin:8px 0;
+
+padding:12px;
+
+border:none;
+
+background:#1b365d;
+
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+font-weight:600;
+
+
+}
+
+
+
+
+
+.quick-buttons button:hover,
+.bot-message button:hover {
+
+
+background:#c8102e;
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+#chatbot-container {
+
+
+right:15px;
+
+bottom:15px;
+
+
+}
+
+
+
+#chatbot-window {
+
+
+width:300px;
+
+height:430px;
+
+
+}
+
+
+
+}
+
+
+
+</style>

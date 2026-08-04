@@ -1,0 +1,212 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+
+const faqs = [
+
+{
+question:"Who do you create deck drawings for?",
+answer:"DMV Deck Designs proudly works with homeowners, contractors, and builders throughout the region. We provide professional deck drafting services and accurate design documentation to help projects move forward efficiently."
+},
+
+
+{
+question:"What area do you provide deck design services?",
+answer:"Although our expertise is designing decks throughout Washington DC, Maryland, and Virginia, DMV Deck Designs can also provide professional deck design services nationwide."
+},
+
+
+{
+question:"What types of decks do you design?",
+answer:"We design wood decks and wood decks with composite or Trex® decking options to create functional and attractive outdoor spaces customized to each property."
+},
+
+
+{
+question:"How long does it take for you to provide the design set for my deck project?",
+answer:"The Standard Design Package typically takes 2–3 business days after final design approval. The Premium Design Package typically takes 3–5 business days after final design approval."
+},
+
+
+{
+question:"Do you build decks?",
+answer:"No. DMV Deck Designs specializes in professional deck design, CAD drawings, permit-ready plans, and construction documentation. We focus exclusively on creating accurate designs that homeowners and contractors can use for permitting and construction."
+},
+
+
+{
+question:"What files will I receive?",
+answer:"Clients receive professional digital PDF files containing design drawings, layouts, elevations, construction details, and other documentation based on the selected design package."
+}
+
+];
+
+
+const faqSchema = {
+
+"@context":"https://schema.org",
+
+"@graph":[
+
+
+{
+
+"@type":"WebPage",
+
+"@id":"https://dmvdeckdesigns.com/faq/",
+
+"url":"https://dmvdeckdesigns.com/faq/",
+
+"name":"Deck Design FAQ | DMV Deck Designs",
+
+"description":"Find answers about deck design plans, permits, CAD drawings, structural drawings, and our professional deck design process."
+
+},
+
+
+
+{
+
+"@type":"FAQPage",
+
+"@id":"https://dmvdeckdesigns.com/faq/#faq",
+
+"url":"https://dmvdeckdesigns.com/faq/",
+
+"mainEntity": faqs.map((faq)=>({
+
+"@type":"Question",
+
+"name":faq.question,
+
+"acceptedAnswer":{
+
+"@type":"Answer",
+
+"text":faq.answer
+
+}
+
+}))
+
+}
+
+]
+
+};
+
+---
+
+
+<BaseLayout
+
+title="Deck Design FAQ | DMV Deck Designs"
+
+description="Find answers about deck design plans, permits, CAD drawings, structural drawings, and our professional deck design process."
+
+>
+
+
+
+<!-- FAQ STRUCTURED DATA -->
+
+<script
+
+type="application/ld+json"
+
+set:html={JSON.stringify(faqSchema)}
+
+></script>
+
+
+
+
+
+<section class="page-hero">
+
+
+<h1>
+Frequently Asked Questions
+</h1>
+
+
+<p>
+Find answers to common questions about DMV Deck Designs, our professional deck drawings, design packages, and permit-ready plans.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="faq-section">
+
+
+{
+faqs.map((faq)=>(
+
+<div class="faq-item">
+
+
+<h2>
+{faq.question}
+</h2>
+
+
+<p>
+{faq.answer}
+</p>
+
+
+</div>
+
+))
+}
+
+
+</section>
+
+
+
+
+
+
+
+<section class="contact-box">
+
+
+<h2>
+Ready To Start Your Deck Project?
+</h2>
+
+
+<p>
+Choose a design package or schedule a consultation with DMV Deck Designs today.
+</p>
+
+
+
+<a
+
+href="/contact"
+
+class="button"
+
+>
+
+Request Consultation
+
+</a>
+
+
+</section>
+
+
+
+
+
+</BaseLayout>

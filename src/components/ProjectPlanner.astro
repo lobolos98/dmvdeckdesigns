@@ -1,0 +1,680 @@
+<div class="planner-container">
+
+
+<div class="planner-progress">
+
+<div class="progress-bar">
+
+<div id="progress-fill"></div>
+
+</div>
+
+
+<p id="step-text">
+Step 1 of 8
+</p>
+
+
+</div>
+
+
+
+
+
+<form id="project-planner-form">
+
+
+
+<section class="planner-step active">
+
+<h2>📍 Project Location</h2>
+
+<p>Where is your project located?</p>
+
+
+<label>
+<input type="radio" name="location" value="Maryland" required>
+Maryland
+</label>
+
+
+<label>
+<input type="radio" name="location" value="Virginia">
+Virginia
+</label>
+
+
+<label>
+<input type="radio" name="location" value="Washington DC">
+Washington DC
+</label>
+
+
+<label>
+<input type="radio" name="location" value="Other">
+Other
+</label>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="planner-step">
+
+<h2>🏡 Project Type</h2>
+
+<p>What type of project are you planning?</p>
+
+
+<label>
+<input type="radio" name="projectType" value="New Deck">
+New Deck
+</label>
+
+
+<label>
+<input type="radio" name="projectType" value="Replace Existing Deck">
+Replace Existing Deck
+</label>
+
+
+<label>
+<input type="radio" name="projectType" value="Expand Existing Deck">
+Expand Existing Deck
+</label>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="planner-step">
+
+
+<h2>🪵 Deck Material</h2>
+
+
+<p>What material are you considering?</p>
+
+
+<label>
+<input type="radio" name="material" value="Wood">
+Wood
+</label>
+
+
+<label>
+<input type="radio" name="material" value="Composite / Trex">
+Composite / Trex
+</label>
+
+
+<label>
+<input type="radio" name="material" value="Not Sure">
+Not Sure
+</label>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="planner-step">
+
+
+<h2>✨ Project Features</h2>
+
+
+<p>Select features included with your project.</p>
+
+
+<label>
+<input type="checkbox" name="features" value="Stairs">
+Stairs
+</label>
+
+
+<label>
+<input type="checkbox" name="features" value="Lighting">
+Lighting
+</label>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="planner-step">
+
+
+<h2>🏘 HOA Approval</h2>
+
+
+<p>Is HOA approval required?</p>
+
+
+<label>
+<input type="radio" name="hoa" value="Yes">
+Yes
+</label>
+
+
+<label>
+<input type="radio" name="hoa" value="No">
+No
+</label>
+
+
+<label>
+<input type="radio" name="hoa" value="Not Sure">
+Not Sure
+</label>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="planner-step">
+
+
+<h2>📅 Project Timeline</h2>
+
+
+<p>When are you planning to start?</p>
+
+
+<label>
+<input type="radio" name="timeline" value="Within 30 Days">
+Within 30 Days
+</label>
+
+
+<label>
+<input type="radio" name="timeline" value="1-3 Months">
+1-3 Months
+</label>
+
+
+<label>
+<input type="radio" name="timeline" value="3-6 Months">
+3-6 Months
+</label>
+
+
+<label>
+<input type="radio" name="timeline" value="Planning Stage">
+Planning Stage
+</label>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="planner-step">
+
+
+<h2>👤 Contact Information</h2>
+
+
+
+<input 
+type="text"
+id="name"
+name="name"
+placeholder="Your Name"
+required
+>
+
+
+<input 
+type="email"
+id="email"
+name="email"
+placeholder="Email Address"
+required
+>
+
+
+<input 
+type="tel"
+id="phone"
+name="phone"
+placeholder="Phone Number"
+required
+>
+
+
+<input 
+type="text"
+id="address"
+name="address"
+placeholder="Project Address"
+required
+>
+
+
+<input 
+type="text"
+id="county"
+name="county"
+placeholder="Project City / County"
+required
+>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="planner-step summary-step">
+
+
+<h2>
+📋 Your Project Summary
+</h2>
+
+
+
+<div id="summary"></div>
+
+
+<div id="recommendation"></div>
+
+
+
+
+<div class="planner-buttons">
+
+
+<a href="/contact/" class="planner-button">
+
+Start My Project
+
+</a>
+
+
+
+<a href="https://buy.stripe.com/7sY7sMe6F1W549PbcQ3Nm01"
+class="planner-button">
+
+Purchase Standard Package
+
+</a>
+
+
+
+<a href="https://buy.stripe.com/28EbJ23s11W56hX1Cg3Nm00"
+class="planner-button">
+
+Purchase Premium Package
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<div class="navigation-buttons">
+
+
+<button type="button" id="previous">
+Previous
+</button>
+
+
+
+<button type="button" id="next">
+Next
+</button>
+
+
+</div>
+
+
+
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+let currentStep = 0;
+
+
+const steps = document.querySelectorAll(".planner-step");
+
+
+const progress = document.getElementById("progress-fill");
+
+
+const stepText = document.getElementById("step-text");
+
+
+const next = document.getElementById("next");
+
+
+const previous = document.getElementById("previous");
+
+
+
+
+
+function updatePlanner(){
+
+
+steps.forEach((step,index)=>{
+
+
+step.classList.toggle(
+"active",
+index === currentStep
+);
+
+
+});
+
+
+
+let percent =
+(currentStep / (steps.length - 1)) * 100;
+
+
+
+progress.style.width =
+percent + "%";
+
+
+
+stepText.textContent =
+`Step ${currentStep + 1} of ${steps.length}`;
+
+
+
+previous.style.display =
+currentStep === 0
+? "none"
+: "block";
+
+
+
+next.textContent =
+currentStep === steps.length - 1
+? "View Summary"
+: "Next";
+
+
+}
+
+
+
+
+
+
+
+next.addEventListener("click",()=>{
+
+
+if(currentStep < steps.length - 1){
+
+
+currentStep++;
+
+
+updatePlanner();
+
+
+}
+
+else{
+
+
+generateSummary();
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+previous.addEventListener("click",()=>{
+
+
+if(currentStep > 0){
+
+
+currentStep--;
+
+
+updatePlanner();
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+
+function generateSummary(){
+
+
+
+let features=[];
+
+
+
+document
+.querySelectorAll('input[name="features"]:checked')
+.forEach(item=>{
+
+
+features.push(item.value);
+
+
+});
+
+
+
+
+
+let projectData={
+
+
+location:
+document.querySelector('input[name="location"]:checked')?.value || "",
+
+
+project:
+document.querySelector('input[name="projectType"]:checked')?.value || "",
+
+
+material:
+document.querySelector('input[name="material"]:checked')?.value || "",
+
+
+features:
+features.join(", ") || "None",
+
+
+hoa:
+document.querySelector('input[name="hoa"]:checked')?.value || "",
+
+
+timeline:
+document.querySelector('input[name="timeline"]:checked')?.value || ""
+
+
+
+};
+
+
+
+
+
+
+document.getElementById("summary").innerHTML = `
+
+
+<strong>Location:</strong>
+${projectData.location}
+
+<br><br>
+
+<strong>Project Type:</strong>
+${projectData.project}
+
+<br><br>
+
+<strong>Material:</strong>
+${projectData.material}
+
+<br><br>
+
+<strong>Features:</strong>
+${projectData.features}
+
+<br><br>
+
+<strong>HOA:</strong>
+${projectData.hoa}
+
+<br><br>
+
+<strong>Timeline:</strong>
+${projectData.timeline}
+
+
+`;
+
+
+
+
+
+let packageRecommendation =
+"Standard Package - $499";
+
+
+
+if(
+
+projectData.location === "Washington DC" ||
+
+projectData.hoa === "Yes" ||
+
+projectData.project === "Expand Existing Deck"
+
+){
+
+
+packageRecommendation =
+"Premium Package - $999";
+
+
+}
+
+
+
+
+
+document.getElementById("recommendation").innerHTML = `
+
+
+<h3>
+Recommended Package
+</h3>
+
+
+<p>
+<strong>
+${packageRecommendation}
+</strong>
+</p>
+
+
+<p>
+Professional CAD drawings, permit-ready plans, and expert design support.
+</p>
+
+
+`;
+
+
+
+}
+
+
+
+updatePlanner();
+
+
+</script>

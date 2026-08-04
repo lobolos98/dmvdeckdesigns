@@ -1,0 +1,363 @@
+<div class="project-gallery">
+
+
+<h2>
+Professional Deck Drawing Examples
+</h2>
+
+
+<p>
+Explore examples of professional deck drawing sets created by DMV Deck Designs. Our plans include detailed layouts, elevations, and documentation used to communicate your project clearly.
+</p>
+
+
+
+
+
+<div class="slider">
+
+
+<button 
+class="gallery-button"
+id="previous-slide"
+>
+
+❮
+
+</button>
+
+
+
+
+
+<img
+
+id="project-image"
+
+src="/images/projects/deck-cover.jpg"
+
+alt="Professional deck design cover sheet"
+
+>
+
+
+
+
+
+<button 
+class="gallery-button"
+id="next-slide"
+>
+
+❯
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div 
+class="gallery-label"
+id="gallery-label"
+>
+
+Cover Sheet
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+const images = [
+
+
+{
+src:"/images/projects/deck-cover.jpg",
+label:"Cover Sheet",
+alt:"Professional deck design cover sheet"
+},
+
+
+{
+src:"/images/projects/deck-plan.jpg",
+label:"Deck Plan View",
+alt:"Residential deck plan drawing"
+},
+
+
+{
+src:"/images/projects/deck-elevation.jpg",
+label:"Deck Elevations",
+alt:"Deck elevation drawings"
+},
+
+
+{
+src:"/images/projects/deck-details.jpg",
+label:"Construction Details",
+alt:"Detailed deck construction drawings"
+},
+
+
+{
+src:"/images/projects/deck-structural.jpg",
+label:"Structural Drawings",
+alt:"Certified structural deck drawings"
+}
+
+
+];
+
+
+
+
+
+let currentSlide = 0;
+
+
+
+
+const image = document.getElementById(
+"project-image"
+);
+
+
+const label = document.getElementById(
+"gallery-label"
+);
+
+
+
+function showSlide(index){
+
+
+currentSlide = index;
+
+
+
+if(currentSlide < 0){
+
+currentSlide = images.length - 1;
+
+}
+
+
+
+if(currentSlide >= images.length){
+
+currentSlide = 0;
+
+}
+
+
+
+image.src = images[currentSlide].src;
+
+image.alt = images[currentSlide].alt;
+
+label.textContent = images[currentSlide].label;
+
+
+}
+
+
+
+
+document
+.getElementById("previous-slide")
+.addEventListener(
+"click",
+()=>{
+
+
+showSlide(currentSlide - 1);
+
+
+});
+
+
+
+
+
+
+document
+.getElementById("next-slide")
+.addEventListener(
+"click",
+()=>{
+
+
+showSlide(currentSlide + 1);
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+<style>
+
+
+.project-gallery {
+
+
+max-width:1000px;
+
+margin:60px auto;
+
+text-align:center;
+
+
+}
+
+
+
+.slider {
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:30px;
+
+
+}
+
+
+
+
+.slider img {
+
+
+width:750px;
+
+max-width:85%;
+
+height:500px;
+
+object-fit:contain;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+background:white;
+
+
+}
+
+
+
+
+
+.gallery-button {
+
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:50%;
+
+background:#1b365d;
+
+color:white;
+
+font-size:25px;
+
+cursor:pointer;
+
+
+}
+
+
+
+
+.gallery-button:hover {
+
+
+background:#c8102e;
+
+
+}
+
+
+
+
+
+.gallery-label {
+
+
+margin-top:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+
+}
+
+
+
+
+
+
+@media(max-width:700px){
+
+
+.slider img {
+
+
+height:300px;
+
+
+}
+
+
+.gallery-button {
+
+
+width:38px;
+
+height:38px;
+
+font-size:20px;
+
+
+}
+
+
+
+}
+
+
+
+</style>
