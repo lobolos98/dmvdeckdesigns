@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+DMV Deck Designs Professional Deck Design Services Agreement
+</title>
+
+
+<style>
+
+:root{
+--navy:#0B2545;
+--red:#C1121F;
+--border:#d1d5db;
+--text:#333;
+}
+
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#f4f6f9;
+
+color:var(--text);
+
+line-height:1.6;
+
+}
+
+
+.container{
+
+max-width:1000px;
+
+margin:40px auto;
+
+background:#fff;
+
+padding:40px;
+
+border-radius:12px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.header{
+
+text-align:center;
+
+border-bottom:3px solid var(--navy);
+
+padding-bottom:25px;
+
+margin-bottom:35px;
+
+}
+
+
+
+.header h1{
+
+color:var(--navy);
+
+margin-bottom:5px;
+
+}
+
+
+
+.header h2{
+
+color:var(--red);
+
+}
+
+
+
+.section{
+
+margin-top:35px;
+
+}
+
+
+
+.section h3{
+
+background:var(--navy);
+
+color:#fff;
+
+padding:12px 18px;
+
+border-radius:6px;
+
+}
+
+
+
+label{
+
+display:block;
+
+font-weight:bold;
+
+margin-top:15px;
+
+}
+
+
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin-top:6px;
+
+border:1px solid var(--border);
+
+border-radius:6px;
+
+font-size:15px;
+
+}
+
+
+
+.checkbox-group input,
+.package input{
+
+width:auto;
+
+margin-right:8px;
+
+}
+
+
+
+.checkbox-group label{
+
+font-weight:normal;
+
+}
+
+
+
+.package{
+
+border:1px solid var(--border);
+
+padding:20px;
+
+margin-top:20px;
+
+border-radius:8px;
+
+}
+
+
+
+.package-title{
+
+font-size:18px;
+
+font-weight:bold;
+
+color:var(--navy);
+
+}
+
+
+
+.notice{
+
+background:#eef4fb;
+
+border-left:5px solid var(--red);
+
+padding:20px;
+
+margin-top:20px;
+
+}
+
+
+
+button{
+
+background:var(--red);
+
+color:white;
+
+border:none;
+
+padding:14px 30px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+
+
+canvas{
+
+touch-action:none;
+
+}
+
+
+
+@media(max-width:700px){
+
+.container{
+
+margin:10px;
+
+padding:20px;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="header">
+
+<h1>
+DMV Deck Designs
+</h1>
+
+
+<h2>
+Professional Deck Design Services Agreement
+</h2>
+
+
+<p>
+Version 2.0
+</p>
+
+
+<p>
+Professional Residential Deck Design & Drafting Services
+<br>
+Serving DC • Maryland • Virginia
+<br>
+Email: info@dmvdeckdesigns.com
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="notice">
+
+<strong>
+Agreement Information
+</strong>
+
+<br><br>
+
+
+Agreement Number:
+
+<span id="displayAgreementNumber"></span>
+
+
+<br>
+
+
+Created:
+
+<span id="displayDate"></span>
+
+
+</div>
+
+
+
+
+
+<form id="agreementForm">
+
+
+
+
+
+<!-- =====================================
+1. CLIENT INFORMATION
+===================================== -->
+
+
+<div class="section">
+
+
+<h3>
+1. Client Information
+</h3>
+
+
+
+<label>
+Client Name
+</label>
+
+
+<input
+type="text"
+name="clientName"
+required>
+
+
+
+<label>
+Project Address
+</label>
+
+
+<input
+type="text"
+name="projectAddress"
+required>
+
+
+
+<label>
+City / State / Zip
+</label>
+
+
+<input
+type="text"
+name="cityStateZip"
+required>
+
+
+
+<label>
+Client Email (Required for Agreement Copy)
+</label>
+
+
+<input
+type="email"
+id="clientEmail"
+name="clientEmail"
+placeholder="client@email.com"
+required>
+
+
+
+<label>
+Phone
+</label>
+
+
+<input
+type="tel"
+name="phone">
+
+
+
+<label>
+Agreement Start Date
+</label>
+
+
+<input
+type="date"
+id="agreementDate"
+name="agreementDate"
+readonly>
+
+
+
+<input
+type="hidden"
+id="agreementNumber"
+name="agreementNumber">
+
+
+<input
+type="hidden"
+id="signedTimestamp"
+name="signedTimestamp">
+
+
+</div>
+
+
+
+
+
+<!-- =====================================
+2. PROJECT TYPE
+===================================== -->
+
+
+<div class="section">
+
+
+<h3>
+2. Project Type
+</h3>
+
+
+<p>
+Select Project Type:
+</p>
+
+
+
+<div class="checkbox-group">
+
+
+<label>
+
+<input
+type="checkbox"
+name="projectType"
+value="New Deck">
+
+New Deck
+
+</label>
+
+
+<label>
+
+<input
+type="checkbox"
+name="projectType"
+value="Deck Replacement">
+
+Deck Replacement
+
+</label>
+
+
+<label>
+
+<input
+type="checkbox"
+name="projectType"
+value="Deck Expansion">
+
+Deck Expansion
+
+</label>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================
+3. DESIGN PACKAGE
+===================================== -->
+
+
+<div class="section">
+
+
+<h3>
+3. Selected Design Package
+</h3>
+
+
+<p>
+Select One Design Package
+</p>
+
+
+
+<div class="package">
+
+
+<label>
+
+
+<input
+type="radio"
+name="package"
+value="499"
+required>
+
+
+<span class="package-title">
+
+Standard Design Package — $499
+
+</span>
+
+
+</label>
+
+
+
+<ul>
+
+<li>Custom deck design</li>
+
+<li>Dimensioned plans</li>
+
+<li>Floor plan layout</li>
+
+<li>Elevation views</li>
+
+<li>Framing layout</li>
+
+<li>Permit-ready drawings</li>
+
+<li>Digital PDF delivery</li>
+
+<li>Two (2) revisions</li>
+
+</ul>
+
+
+</div>
+
+
+
+<div class="package">
+
+
+<label>
+
+
+<input
+type="radio"
+name="package"
+value="999">
+
+
+<span class="package-title">
+
+Premium Design Package — $999
+
+</span>
+
+
+</label>
+
+
+
+<ul>
+
+<li>Everything included in Standard</li>
+
+<li>Enhanced construction details</li>
+
+<li>Certified structural drawings when required</li>
+
+<li>Expanded permit drawing set</li>
+
+<li>Priority turnaround</li>
+
+<li>Additional design support</li>
+
+<li>Three (3) revisions</li>
+
+</ul>
+
+
+</div>
+
+
+
+<div class="package">
+
+
+<label>
+
+<input
+type="checkbox"
+id="consultation"
+value="250"
+disabled>
+
+
+<span class="package-title">
+
+Consultation + Site Visit (+$250)
+
+</span>
+
+
+</label>
+
+
+
+<ul>
+
+<li>On-site consultation</li>
+
+<li>Basic project review</li>
+
+<li>Design recommendations</li>
+
+<li>Feasibility discussion</li>
+
+<li>Follow-up written summary</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+<div class="notice">
+
+<strong>
+Current Total
+</strong>
+
+
+<br><br>
+
+
+<input
+type="text"
+id="paymentAmount"
+readonly
+placeholder="$0.00">
+
+
+</div>
+
+
+</div>
+
+<!-- =====================================
+4. SCOPE OF SERVICES
+===================================== -->
+
+<div class="section">
+
+<h3>
+4. Scope of Services
+</h3>
+
+
+<p>
+DMV Deck Designs provides professional residential deck design and drafting services only.
+</p>
+
+
+<p>
+Services may include:
+</p>
+
+
+<ul>
+
+<li>Concept development</li>
+
+<li>CAD drafting</li>
+
+<li>Deck layout plans</li>
+
+<li>Dimensioned drawings</li>
+
+<li>Elevations</li>
+
+<li>Framing layouts</li>
+
+<li>Construction details</li>
+
+<li>Permit-oriented drawing packages</li>
+
+<li>Design revisions included with the selected package</li>
+
+</ul>
+
+
+<p>
+The Designer's responsibility is limited to preparing design documents based on information supplied by the Client.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<!-- =====================================
+5. SERVICES NOT INCLUDED
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+5. Services Not Included
+</h3>
+
+
+<p>
+Unless specifically agreed to in writing, the following services are excluded:
+</p>
+
+
+<ul>
+
+<li>Construction or installation</li>
+
+<li>Acting as a general contractor</li>
+
+<li>Contractor supervision</li>
+
+<li>Construction management</li>
+
+<li>Material purchasing</li>
+
+<li>Property surveying</li>
+
+<li>Boundary verification</li>
+
+<li>Engineering services unless specifically included</li>
+
+<li>Permit submission</li>
+
+<li>Permit fees</li>
+
+<li>Inspection fees</li>
+
+<li>HOA submissions or approvals</li>
+
+<li>Contractor selection</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<!-- =====================================
+6. CLIENT RESPONSIBILITIES
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+6. Client Responsibilities
+</h3>
+
+
+<p>
+The Client agrees to provide accurate and complete information necessary for design development, including:
+</p>
+
+
+<ul>
+
+<li>Correct property information</li>
+
+<li>Available measurements</li>
+
+<li>Photos of existing conditions</li>
+
+<li>HOA requirements</li>
+
+<li>Existing surveys</li>
+
+<li>Known permit requirements</li>
+
+</ul>
+
+
+<p>
+The Client is responsible for reviewing and approving all drawings before final delivery.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+7. PAYMENT TERMS
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+7. Payment Terms
+</h3>
+
+
+<p>
+Design fees must be paid according to the selected package before final design files are released.
+</p>
+
+
+<p>
+DMV Deck Designs reserves the right to:
+</p>
+
+
+<ul>
+
+<li>Pause work for unpaid balances</li>
+
+<li>Withhold final documents until payment is complete</li>
+
+<li>Charge additional fees for work outside the original agreement</li>
+
+</ul>
+
+
+<p>
+Additional services require written approval before work begins.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+8. REVISIONS AND DESIGN CHANGES
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+8. Revisions and Design Changes
+</h3>
+
+
+<p>
+Included revisions:
+</p>
+
+
+<ul>
+
+<li>
+Consultation + Site Visit: No revisions included
+</li>
+
+
+<li>
+Standard Design Package: Two (2) revisions
+</li>
+
+
+<li>
+Premium Design Package: Three (3) revisions
+</li>
+
+
+</ul>
+
+
+<p>
+A revision includes reasonable modifications to the approved design direction.
+</p>
+
+
+<p>
+Major redesigns, project changes, additions, or changes after final approval may require additional fees.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+9. PROJECT TIMELINE
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+9. Project Timeline
+</h3>
+
+
+<p>
+
+<strong>
+Standard Design Package:
+</strong>
+
+</p>
+
+
+<p>
+Approximately 2–3 business days after receiving required information and design approval.
+</p>
+
+
+
+<p>
+
+<strong>
+Premium Design Package:
+</strong>
+
+</p>
+
+
+<p>
+Approximately 3–5 business days after receiving required information and design approval.
+</p>
+
+
+
+<p>
+Timelines may be extended due to:
+</p>
+
+
+<ul>
+
+<li>Client delays</li>
+
+<li>Missing information</li>
+
+<li>Additional revisions</li>
+
+<li>Permit requirements</li>
+
+<li>Unforeseen project conditions</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- =====================================
+10. DESIGN OWNERSHIP & COPYRIGHT
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+10. Design Ownership & Copyright
+</h3>
+
+
+<p>
+All drawings, CAD files, concepts, and design documents remain the intellectual property of DMV Deck Designs.
+</p>
+
+
+<p>
+After full payment is received, the Client receives a non-exclusive license to use the completed drawings for the approved project address only.
+</p>
+
+
+<p>
+The Client may not:
+</p>
+
+
+<ul>
+
+<li>Resell drawings</li>
+
+<li>Transfer drawings to another property</li>
+
+<li>Modify and distribute drawings without written permission</li>
+
+<li>Use drawings for additional projects</li>
+
+</ul>
+
+
+</div>
+
+<!-- =====================================
+11. CONSTRUCTION DISCLAIMER
+===================================== -->
+
+<div class="section">
+
+<h3>
+11. Construction Disclaimer
+</h3>
+
+
+<p>
+DMV Deck Designs is a professional design and drafting company.
+</p>
+
+
+<p>
+DMV Deck Designs:
+</p>
+
+
+<ul>
+
+<li>Does not construct decks</li>
+
+<li>Does not employ construction crews</li>
+
+<li>Does not act as a home improvement contractor</li>
+
+<li>Does not supervise construction</li>
+
+<li>Does not guarantee contractor workmanship</li>
+
+</ul>
+
+
+<p>
+Any construction agreement is solely between the Client and their selected contractor.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<!-- =====================================
+12. PERMIT DISCLAIMER
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+12. Permit Disclaimer
+</h3>
+
+
+<p>
+DMV Deck Designs prepares drawings intended to assist with the permitting process.
+</p>
+
+
+<p>
+The Client understands:
+</p>
+
+
+<ul>
+
+<li>Permit approval is controlled by the local authority</li>
+
+<li>Requirements vary by jurisdiction</li>
+
+<li>Additional documents may be requested</li>
+
+<li>Permit approval cannot be guaranteed</li>
+
+</ul>
+
+
+<p>
+Corrections or redesigns outside included revisions may require additional fees.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+13. LIMITATION OF LIABILITY
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+13. Limitation of Liability
+</h3>
+
+
+<p>
+To the maximum extent permitted by Maryland law, DMV Deck Designs' total liability under this agreement shall not exceed the amount paid by the Client for design services.
+</p>
+
+
+<p>
+DMV Deck Designs is not responsible for:
+</p>
+
+
+<ul>
+
+<li>Contractor errors</li>
+
+<li>Construction defects</li>
+
+<li>Permit decisions</li>
+
+<li>Incorrect information provided by the Client</li>
+
+<li>Existing site conditions discovered after completion</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+14. CANCELLATION POLICY
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+14. Cancellation Policy
+</h3>
+
+
+<p>
+If the Client cancels after design work begins, payments may be applied toward completed work.
+</p>
+
+
+<p>
+Completed design services are non-refundable after delivery.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+15. ELECTRONIC APPROVAL
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+15. Electronic Approval
+</h3>
+
+
+<p>
+Electronic signatures, email approvals, and digital confirmations shall be considered valid authorization to proceed.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+16. GOVERNING LAW
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+16. Governing Law
+</h3>
+
+
+<p>
+This agreement shall be governed by the laws of the State of Maryland.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+17. ADDITIONAL CONTRACT PROVISIONS
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+17. Additional Contract Provisions
+</h3>
+
+
+
+<h4>
+Change Orders
+</h4>
+
+
+<p>
+Any requested services outside the original scope must be approved in writing before additional work begins.
+</p>
+
+
+
+
+<h4>
+Severability
+</h4>
+
+
+<p>
+If any portion of this agreement is found invalid or unenforceable, the remaining provisions shall remain in effect.
+</p>
+
+
+
+
+<h4>
+Force Majeure
+</h4>
+
+
+<p>
+DMV Deck Designs shall not be responsible for delays caused by circumstances beyond reasonable control.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+18. SIGNATURES
+===================================== -->
+
+
+<div class="section">
+
+<h3>
+18. Signatures
+</h3>
+
+
+<p>
+By signing below, both parties acknowledge they have reviewed, understand, and agree to the terms of this Professional Deck Design Services Agreement.
+</p>
+
+
+
+
+
+
+<!-- CLIENT AGREEMENTS -->
+
+
+<label>
+
+<input
+
+type="checkbox"
+
+required>
+
+I acknowledge DMV Deck Designs provides professional design and drafting services only and does not provide construction services.
+
+</label>
+
+
+
+<label>
+
+<input
+
+type="checkbox"
+
+required>
+
+I confirm all information provided is accurate and complete.
+
+</label>
+
+
+
+
+<label>
+
+<input
+
+type="checkbox"
+
+required>
+
+I agree to the terms and conditions of this Professional Deck Design Services Agreement.
+
+</label>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<!-- DMV REPRESENTATIVE -->
+
+
+<h4>
+DMV Deck Designs Representative
+</h4>
+
+
+<p>
+
+<strong>
+Representative:
+</strong>
+
+DMV Deck Designs
+
+</p>
+
+
+
+<p>
+
+<strong>
+Signature:
+</strong>
+
+DMV Deck Designs
+
+</p>
+
+
+
+<p>
+
+<strong>
+Date:
+</strong>
+
+<span id="companyDate"></span>
+
+</p>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<!-- CLIENT SIGNATURE -->
+
+
+<h4>
+Client
+</h4>
+
+
+
+
+<label>
+Client Printed Name
+</label>
+
+
+<input
+
+type="text"
+
+name="clientPrintedName"
+
+required>
+
+
+
+
+
+
+<label>
+Digital Signature
+</label>
+
+
+
+<canvas
+
+id="signaturePad"
+
+width="700"
+
+height="220"
+
+style="
+
+width:100%;
+
+border:2px solid #ccc;
+
+border-radius:8px;
+
+background:white;
+
+">
+
+</canvas>
+
+
+
+
+<br><br>
+
+
+
+<button
+
+type="button"
+
+onclick="clearSignature()">
+
+Clear Signature
+
+</button>
+
+
+
+
+
+
+<label>
+Client Signature Date
+</label>
+
+
+<input
+
+type="date"
+
+id="clientDate"
+
+required>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="notice">
+
+
+<strong>
+DMV Deck Designs
+</strong>
+
+
+<br>
+
+Professional Deck Design Services
+
+
+<br>
+
+Serving DC • Maryland • Virginia
+
+
+<br>
+
+Email: info@dmvdeckdesigns.com
+
+
+</div>
+
+
+
+
+
+
+<div class="section">
+
+
+<h3>
+Secure Payment
+</h3>
+
+
+
+<p>
+Complete payment after signing the agreement.
+</p>
+
+
+
+<label>
+Final Amount Due
+</label>
+
+
+
+<input
+
+type="text"
+
+id="finalPaymentAmount"
+
+readonly
+
+placeholder="$0.00">
+
+
+<br><br>
+
+
+<button
+
+type="submit">
+
+Proceed to Secure Stripe Payment
+
+</button>
+
+
+</div>
+
+
+
+</form>
+
+
+</div>
+
+<script>
+
+
+/******************************************
+DATE + AGREEMENT NUMBER
+******************************************/
+
+const today = new Date();
+
+
+const formattedDate =
+today.toISOString().split("T")[0];
+
+
+
+// Agreement Start Date
+
+document.getElementById("agreementDate").value =
+formattedDate;
+
+
+
+// Client Signature Date
+
+document.getElementById("clientDate").value =
+formattedDate;
+
+
+
+
+// DMV Deck Designs Representative Date
+
+document.getElementById("companyDate").textContent =
+today.toLocaleDateString();
+
+
+
+
+// Generate Agreement Number
+
+const agreementNumber =
+"DMV-" +
+today.getFullYear() +
+"-" +
+Math.floor(
+100000 + Math.random() * 900000
+);
+
+
+
+document.getElementById(
+"agreementNumber"
+).value = agreementNumber;
+
+
+
+document.getElementById(
+"displayAgreementNumber"
+).textContent = agreementNumber;
+
+
+
+document.getElementById(
+"displayDate"
+).textContent =
+today.toLocaleDateString();
+
+
+
+
+
+
+
+
+/******************************************
+PACKAGE TOTAL CALCULATION
+******************************************/
+
+const packages =
+document.querySelectorAll(
+'input[name="package"]'
+);
+
+
+
+const consultation =
+document.getElementById(
+"consultation"
+);
+
+
+
+const paymentAmount =
+document.getElementById(
+"paymentAmount"
+);
+
+
+
+const finalPayment =
+document.getElementById(
+"finalPaymentAmount"
+);
+
+
+
+
+
+function updateTotal(){
+
+
+let total = 0;
+
+
+let selected = false;
+
+
+
+packages.forEach(function(item){
+
+
+if(item.checked){
+
+
+selected = true;
+
+
+total += Number(item.value);
+
+
+}
+
+
+});
+
+
+
+
+
+if(selected){
+
+
+consultation.disabled = false;
+
+
+}
+
+else{
+
+
+consultation.disabled = true;
+
+
+consultation.checked = false;
+
+
+}
+
+
+
+
+
+
+if(consultation.checked){
+
+
+total += 250;
+
+
+}
+
+
+
+
+
+let formatted =
+
+"$" + total.toFixed(2);
+
+
+
+paymentAmount.value = formatted;
+
+
+finalPayment.value = formatted;
+
+
+
+}
+
+
+
+
+
+
+packages.forEach(function(item){
+
+
+item.addEventListener(
+"change",
+updateTotal
+);
+
+
+});
+
+
+
+
+
+consultation.addEventListener(
+"change",
+updateTotal
+);
+
+
+
+updateTotal();
+
+
+
+
+
+
+
+
+/******************************************
+DIGITAL SIGNATURE PAD
+******************************************/
+
+const canvas =
+document.getElementById(
+"signaturePad"
+);
+
+
+
+const ctx =
+canvas.getContext(
+"2d"
+);
+
+
+
+ctx.lineWidth = 2;
+
+ctx.lineCap = "round";
+
+
+
+let drawing = false;
+
+
+
+
+function getPosition(e){
+
+
+const rect =
+canvas.getBoundingClientRect();
+
+
+
+if(e.touches){
+
+
+return {
+
+
+x:
+e.touches[0].clientX - rect.left,
+
+
+y:
+e.touches[0].clientY - rect.top
+
+
+};
+
+
+}
+
+
+
+return {
+
+
+x:e.clientX - rect.left,
+
+
+y:e.clientY - rect.top
+
+
+};
+
+
+}
+
+
+
+
+
+
+function startDrawing(e){
+
+
+drawing = true;
+
+
+const pos =
+getPosition(e);
+
+
+ctx.beginPath();
+
+
+ctx.moveTo(
+pos.x,
+pos.y
+);
+
+
+}
+
+
+
+
+
+function draw(e){
+
+
+if(!drawing)
+return;
+
+
+e.preventDefault();
+
+
+
+const pos =
+getPosition(e);
+
+
+
+ctx.lineTo(
+pos.x,
+pos.y
+);
+
+
+
+ctx.stroke();
+
+
+
+}
+
+
+
+
+
+
+function stopDrawing(){
+
+
+drawing=false;
+
+
+}
+
+
+
+
+
+canvas.addEventListener(
+"mousedown",
+startDrawing
+);
+
+
+
+canvas.addEventListener(
+"mousemove",
+draw
+);
+
+
+
+canvas.addEventListener(
+"mouseup",
+stopDrawing
+);
+
+
+
+canvas.addEventListener(
+"mouseleave",
+stopDrawing
+);
+
+
+
+
+
+canvas.addEventListener(
+"touchstart",
+startDrawing
+);
+
+
+
+canvas.addEventListener(
+"touchmove",
+draw
+);
+
+
+
+canvas.addEventListener(
+"touchend",
+stopDrawing
+);
+
+
+
+
+
+
+
+function clearSignature(){
+
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+
+}
+
+
+
+
+
+
+
+/******************************************
+CHECK SIGNATURE EXISTS
+******************************************/
+
+function signatureComplete(){
+
+
+const pixels =
+ctx.getImageData(
+0,
+0,
+canvas.width,
+canvas.height
+).data;
+
+
+
+for(
+let i = 3;
+i < pixels.length;
+i += 4
+){
+
+
+if(pixels[i] > 0){
+
+
+return true;
+
+
+}
+
+
+}
+
+
+
+return false;
+
+
+}
+
+
+
+
+
+
+
+/******************************************
+STRIPE PAYMENT LINKS
+******************************************/
+
+
+const stripeLinks = {
+
+
+standard:
+
+"https://buy.stripe.com/7sY7sMe6F1W549PbcQ3Nm01",
+
+
+
+standardConsult:
+
+"https://buy.stripe.com/fZu8wQd2B3096hXcgU3Nm03",
+
+
+
+premium:
+
+"https://buy.stripe.com/28EbJ23s11W56hX1Cg3Nm00",
+
+
+
+premiumConsult:
+
+"https://buy.stripe.com/8x2cN67IhbwFbCh4Os3Nm04"
+
+
+
+};
+
+
+
+
+
+
+
+/******************************************
+FORM SUBMISSION
+******************************************/
+
+document
+
+.getElementById(
+"agreementForm"
+)
+
+.addEventListener(
+
+"submit",
+
+function(e){
+
+
+e.preventDefault();
+
+
+
+
+
+
+if(finalPayment.value === "$0.00"){
+
+
+alert(
+"Please select a design package."
+);
+
+
+return;
+
+
+}
+
+
+
+
+
+
+if(!signatureComplete()){
+
+
+alert(
+"Please provide your digital signature."
+);
+
+
+return;
+
+
+}
+
+
+
+
+
+
+document.getElementById(
+"signedTimestamp"
+).value =
+new Date().toISOString();
+
+
+
+
+
+
+
+let selectedPackage =
+
+document.querySelector(
+'input[name="package"]:checked'
+);
+
+
+
+
+
+
+let paymentURL = "";
+
+
+
+
+
+
+
+if(
+selectedPackage.value === "499"
+&&
+!consultation.checked
+){
+
+
+paymentURL =
+stripeLinks.standard;
+
+
+}
+
+
+
+
+
+
+
+if(
+selectedPackage.value === "499"
+&&
+consultation.checked
+){
+
+
+paymentURL =
+stripeLinks.standardConsult;
+
+
+}
+
+
+
+
+
+
+
+if(
+selectedPackage.value === "999"
+&&
+!consultation.checked
+){
+
+
+paymentURL =
+stripeLinks.premium;
+
+
+}
+
+
+
+
+
+
+
+if(
+selectedPackage.value === "999"
+&&
+consultation.checked
+){
+
+
+paymentURL =
+stripeLinks.premiumConsult;
+
+
+}
+
+
+
+
+
+
+/*
+
+PDF GENERATION HOOK
+
+This is where a PDF/email service
+will be connected.
+
+The form data includes:
+
+- Client Name
+- Client Email
+- Agreement Number
+- Signature
+- Package
+- Amount
+- Date
+
+*/
+
+
+
+
+
+
+// Redirect to Stripe
+
+window.location.href =
+paymentURL;
+
+
+
+}
+
+);
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

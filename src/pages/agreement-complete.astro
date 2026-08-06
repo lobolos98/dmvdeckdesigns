@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+DMV Deck Designs Agreement Complete
+</title>
+
+
+<style>
+
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#F6F8FB;
+
+margin:0;
+
+padding:40px;
+
+color:#333;
+
+}
+
+
+
+.container{
+
+max-width:850px;
+
+margin:auto;
+
+background:#ffffff;
+
+padding:40px;
+
+border-radius:12px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+text-align:center;
+
+}
+
+
+
+h1{
+
+color:#0B2545;
+
+}
+
+
+
+h2{
+
+color:#C1121F;
+
+}
+
+
+
+button{
+
+background:#C1121F;
+
+color:white;
+
+border:none;
+
+padding:16px 35px;
+
+border-radius:6px;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+
+button:hover{
+
+opacity:.9;
+
+}
+
+
+.info{
+
+background:#EEF4FB;
+
+padding:20px;
+
+border-left:5px solid #C1121F;
+
+margin:25px 0;
+
+text-align:left;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+DMV Deck Designs
+</h1>
+
+
+<h2>
+Payment Complete
+</h2>
+
+
+<p>
+Your Professional Deck Design Services Agreement is ready.
+</p>
+
+
+
+<div class="info">
+
+
+<strong>
+Agreement Number:
+</strong>
+
+<span id="agreementNumber"></span>
+
+
+<br><br>
+
+
+<strong>
+Client:
+</strong>
+
+<span id="clientName"></span>
+
+
+<br><br>
+
+
+<strong>
+Package:
+</strong>
+
+<span id="package"></span>
+
+
+<br><br>
+
+
+<strong>
+Amount:
+</strong>
+
+$<span id="amount"></span>
+
+
+</div>
+
+
+
+
+<button onclick="createPDF()">
+
+Generate Signed Agreement PDF
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+
+
+<script>
+
+
+// LOAD SAVED AGREEMENT
+
+
+const agreement = JSON.parse(
+
+localStorage.getItem(
+"dmvAgreement"
+)
+
+);
+
+
+
+
+
+if(!agreement){
+
+alert(
+
+"No agreement information found."
+
+);
+
+}
+
+
+
+
+
+else{
+
+
+document.getElementById(
+"agreementNumber"
+).innerHTML = agreement.agreementNumber;
+
+
+
+document.getElementById(
+"clientName"
+).innerHTML = agreement.clientName;
+
+
+
+document.getElementById(
+"amount"
+).innerHTML = agreement.total;
+
+
+
+let packageText="";
+
+
+
+if(agreement.package==="499"){
+
+packageText="Standard Design Package";
+
+}
+
+
+if(agreement.package==="999"){
+
+packageText="Premium Design Package";
+
+}
+
+
+
+if(
+agreement.consultation
+){
+
+packageText +=
+
+" + Consultation & Site Visit";
+
+}
+
+
+
+document.getElementById(
+"package"
+).innerHTML = packageText;
+
+
+}
+
+
+
+
+
+
+
+
+
+function createPDF(){
+
+
+
+const {jsPDF}=window.jspdf;
+
+
+
+const pdf = new jsPDF();
+
+
+
+
+
+let y=20;
+
+
+
+
+
+
+function addLine(text,size=11){
+
+
+if(y>275){
+
+
+pdf.addPage();
+
+
+y=20;
+
+
+}
+
+
+
+pdf.setFontSize(size);
+
+
+
+pdf.text(
+
+text,
+
+20,
+
+y,
+
+{
+
+maxWidth:170
+
+}
+
+);
+
+
+
+y +=8;
+
+
+}
+
+
+
+
+
+
+
+
+// HEADER
+
+
+pdf.setFontSize(18);
+
+
+
+pdf.text(
+
+"DMV Deck Designs",
+
+20,
+
+y
+
+);
+
+
+
+y+=10;
+
+
+
+addLine(
+
+"Professional Deck Design Services Agreement",
+
+14
+
+);
+
+
+
+addLine(
+
+"Serving DC • Maryland • Virginia"
+
+);
+
+
+
+addLine(
+
+"Email: info@dmvdeckdesigns.com"
+
+);
+
+
+
+y+=8;
+
+
+
+
+
+
+
+// AGREEMENT DATA
+
+
+addLine(
+
+"Agreement Number: "
+
++
+
+agreement.agreementNumber
+
+);
+
+
+
+addLine(
+
+"Agreement Date: "
+
++
+
+agreement.agreementDate
+
+);
+
+
+
+y+=10;
+
+
+
+
+
+
+
+// CLIENT INFORMATION
+
+
+addLine(
+
+"SECTION 1 - CLIENT INFORMATION",
+
+13
+
+);
+
+
+
+addLine(
+
+"Client Name: "
+
++
+
+agreement.clientName
+
+);
+
+
+
+addLine(
+
+"Email: "
+
++
+
+agreement.clientEmail
+
+);
+
+
+
+addLine(
+
+"Phone: "
+
++
+
+agreement.phone
+
+);
+
+
+
+addLine(
+
+"Project Address: "
+
++
+
+agreement.projectAddress
+
+);
+
+
+
+addLine(
+
+"City/State/Zip: "
+
++
+
+agreement.cityStateZip
+
+);
+
+
+
+y+=10;
+
+
+
+
+
+
+
+// PACKAGE
+
+
+addLine(
+
+"SECTION 3 - SELECTED PACKAGE",
+
+13
+
+);
+
+
+
+let packageName="";
+
+
+
+if(
+agreement.package==="499"
+){
+
+packageName=
+
+"Standard Design Package - $499";
+
+}
+
+
+
+if(
+agreement.package==="999"
+){
+
+packageName=
+
+"Premium Design Package - $999";
+
+}
+
+
+
+
+if(
+agreement.consultation
+){
+
+packageName +=
+
+" + Consultation";
+
+}
+
+
+
+
+
+addLine(packageName);
+
+
+
+addLine(
+
+"Amount Paid: $"
+
++
+
+agreement.total
+
+);
+
+
+
+
+
+y+=10;
+
+
+
+
+
+
+
+// CONTRACT
+
+
+const sections=[
+
+
+"SECTION 4 - Scope of Services: DMV Deck Designs provides professional residential deck design and drafting services only.",
+
+
+"SECTION 5 - Services Not Included: Construction, installation, contractor supervision, surveying, permit fees, inspections, HOA approvals, and contractor selection are excluded.",
+
+
+"SECTION 6 - Client Responsibilities: Client provides accurate information, measurements, photos, and project requirements.",
+
+
+"SECTION 7 - Payment Terms: Design fees must be paid before final design files are released.",
+
+
+"SECTION 8 - Revisions: Standard includes two revisions. Premium includes three revisions.",
+
+
+"SECTION 9 - Timeline: Standard approximately 2-3 business days. Premium approximately 3-5 business days.",
+
+
+"SECTION 10 - Design Ownership: All drawings and design documents remain property of DMV Deck Designs.",
+
+
+"SECTION 11 - Construction Disclaimer: DMV Deck Designs does not build decks or supervise construction.",
+
+
+"SECTION 12 - Permit Disclaimer: Permit approval is controlled by local authorities.",
+
+
+"SECTION 13 - Liability: Liability is limited to fees paid for design services.",
+
+
+"SECTION 14 - Cancellation: Completed design services are non-refundable after delivery.",
+
+
+"SECTION 15 - Electronic Approval: Digital signatures are valid authorization.",
+
+
+"SECTION 16 - Governing Law: Agreement governed by Maryland law.",
+
+
+"SECTION 17 - Additional Provisions: Change orders require written approval.",
+
+
+"SECTION 18 - Signatures: Client accepts agreement terms."
+
+];
+
+
+
+
+
+
+sections.forEach(function(section){
+
+
+addLine(section);
+
+
+y+=4;
+
+
+});
+
+
+
+
+
+
+
+
+
+// SIGNATURE
+
+
+addLine(
+
+"CLIENT DIGITAL SIGNATURE",
+
+13
+
+);
+
+
+
+if(agreement.signature){
+
+
+pdf.addImage(
+
+agreement.signature,
+
+"PNG",
+
+20,
+
+y,
+
+70,
+
+30
+
+);
+
+
+y+=40;
+
+
+}
+
+
+
+
+
+
+addLine(
+
+"DMV Deck Designs Representative"
+
+);
+
+
+
+addLine(
+
+"DMV Deck Designs"
+
+);
+
+
+
+addLine(
+
+"Professional Deck Design Services"
+
+);
+
+
+
+
+
+
+
+
+// FILE NAME
+
+
+let filename =
+
+"DMV_Deck_Design_Agreement_"
+
++
+
+agreement.clientName.replace(/\s+/g,"_")
+
++
+
+"_"
+
++
+
+agreement.agreementNumber
+
++
+
+".pdf";
+
+
+
+
+
+
+
+pdf.save(filename);
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
