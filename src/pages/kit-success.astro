@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Thank You | DMV Deck Designs"
+  description="Thank you for purchasing the DMV Deck Designs Complete Deck Planning Kit."
+>
+  <section class="success-page">
+    <div class="success-icon">✓</div>
+    <h1>Thank You for Your Purchase!</h1>
+    <h2>Your Deck Planning Kit Is Ready</h2>
+    <p>
+      Your payment was completed successfully. We appreciate your purchase and hope the
+      DMV Deck Designs Complete Deck Planning Kit helps you organize your deck project.
+    </p>
+
+    <div class="delivery-box">
+      <h3>Next Step</h3>
+      <p>
+        Your digital kit should be delivered using the purchase delivery method configured
+        for your Stripe payment link.
+      </p>
+      <p class="note">
+        If you do not receive your digital product, please contact DMV Deck Designs at
+        <a href="mailto:info@dmvdeckdesigns.com">info@dmvdeckdesigns.com</a>.
+      </p>
+    </div>
+
+    <div class="success-actions">
+      <a class="button" href="/">Return to DMV Deck Designs</a>
+      <a class="button secondary" href="/purchase/">View Professional Design Packages</a>
+    </div>
+  </section>
+
+  <style>
+    .success-page {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 75px 25px 90px;
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: #1b365d;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 46px;
+      font-weight: 700;
+    }
+
+    .success-page h1 {
+      font-size: clamp(40px, 6vw, 58px);
+    }
+
+    .success-page h2 {
+      color: #1b365d;
+    }
+
+    .success-page > p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 18px;
+    }
+
+    .delivery-box {
+      max-width: 650px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #f5f7fa;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+
+    .delivery-box h3 {
+      color: #1b365d;
+    }
+
+    .note {
+      font-size: 15px;
+    }
+
+    .success-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</BaseLayout>
