@@ -1,0 +1,5 @@
+Configure the $49 Deck Planning Kit Payment Link to redirect after successful payment to:
+
+https://dmvdeckdesigns.com/kit-success?session_id={CHECKOUT_SESSION_ID}
+
+Do not remove or URL-encode the {CHECKOUT_SESSION_ID} placeholder; Stripe replaces it with the Checkout Session ID.
