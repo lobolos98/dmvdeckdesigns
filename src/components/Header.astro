@@ -5,314 +5,74 @@
 
   <div class="nav-container">
 
-
-    <!-- LOGO -->
-
     <div class="logo-container">
-
       <a href="/" aria-label="DMV Deck Designs Home">
-
-        <img
-          src="/logo.png"
-          alt="DMV Deck Designs Logo"
-          class="site-logo"
-        />
-
+        <img src="/logo.png" alt="DMV Deck Designs Logo" class="site-logo" />
       </a>
-
     </div>
 
-
-
-
-
-    <!-- DESKTOP NAVIGATION -->
-
     <nav class="desktop-nav">
-
-
-      <a href="/">
-        Home
-      </a>
-
-
-
-      <a href="/services/">
-        Services
-      </a>
-
-
-
-      <a href="/process/">
-        Design Process
-      </a>
-
-
-
-
-
-      <!-- LOCATIONS DROPDOWN -->
+      <a href="/">Home</a>
+      <a href="/services/">Services</a>
+      <a href="/process/">Design Process</a>
 
       <div class="dropdown">
-
-
-        <button
-          class="drop-button"
-          type="button"
-        >
-          Locations ▼
-        </button>
-
-
-
+        <button class="drop-button" type="button">Locations ▼</button>
         <div class="dropdown-menu">
-
-
-          <a href="/locations/">
-            All Locations
-          </a>
-
-
-          <a href="/deck-design-maryland/">
-            Maryland
-          </a>
-
-
-          <a href="/deck-design-virginia/">
-            Virginia
-          </a>
-
-
-          <a href="/deck-design-washington-dc/">
-            Washington DC
-          </a>
-
-
+          <a href="/locations/">All Locations</a>
+          <a href="/deck-design-maryland/">Maryland</a>
+          <a href="/deck-design-virginia/">Virginia</a>
+          <a href="/deck-design-washington-dc/">Washington DC</a>
         </div>
-
-
       </div>
 
+      <a href="/project-planner/">Project Planner</a>
+      <a href="/deck-planning-kit/">Deck Planning Kit</a>
+      <a href="/purchase/">Purchase</a>
+      <a href="/faq/">FAQ</a>
 
-
-
-
-
-      <a href="/project-planner/">
-        Project Planner
-      </a>
-
-
-
-
-
-      <a href="/purchase/">
-        Purchase
-      </a>
-
-
-
-
-
-      <a href="/faq/">
-        FAQ
-      </a>
-
-
-
-
-
-      <a
-        href="/contact/"
-        class="consult-button"
-      >
-
-        📅 Book Consultation
-
-      </a>
-
-
-
-
+      <a href="/contact/" class="consult-button">📅 Book Consultation</a>
     </nav>
 
-
-
-
-
-    <!-- MOBILE HAMBURGER -->
-
-    <button
-      class="mobile-toggle"
-      aria-label="Open Menu"
-      type="button"
-    >
-
-      ☰
-
-    </button>
-
-
-
+    <button class="mobile-toggle" aria-label="Open Menu" type="button">☰</button>
   </div>
 
-
-
-
-
-  <!-- MOBILE NAVIGATION MENU -->
-
   <nav class="mobile-nav">
-
-
-    <a href="/">
-      Home
-    </a>
-
-
-    <a href="/services/">
-      Services
-    </a>
-
-
-    <a href="/process/">
-      Design Process
-    </a>
-
-
-    <a href="/locations/">
-      Locations
-    </a>
-
-
-    <a href="/project-planner/">
-      Project Planner
-    </a>
-
-
-    <a href="/purchase/">
-      Purchase
-    </a>
-
-
-    <a href="/faq/">
-      FAQ
-    </a>
-
-
-    <a
-      href="/contact/"
-      class="consult-button"
-    >
-
-      📅 Book Consultation
-
-    </a>
-
-
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/process/">Design Process</a>
+    <a href="/locations/">Locations</a>
+    <a href="/project-planner/">Project Planner</a>
+    <a href="/deck-planning-kit/">Deck Planning Kit</a>
+    <a href="/purchase/">Purchase</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/contact/" class="consult-button">📅 Book Consultation</a>
   </nav>
-
-
-
 
 </header>
 
-
-
-
-
-
-
-
-
 <script>
+const dropdown = document.querySelector(".dropdown");
+const dropButton = document.querySelector(".drop-button");
 
+if (dropButton && dropdown) {
+  dropButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    dropdown.classList.toggle("open");
+  });
 
-/* ==========================
-LOCATION DROPDOWN
-========================== */
-
-
-const dropdown =
-document.querySelector(".dropdown");
-
-
-const dropButton =
-document.querySelector(".drop-button");
-
-
-
-if(dropButton && dropdown){
-
-
-dropButton.addEventListener(
-"click",
-(event)=>{
-
-
-event.preventDefault();
-
-event.stopPropagation();
-
-
-dropdown.classList.toggle("open");
-
-
-});
-
-
-document.addEventListener(
-"click",
-()=>{
-
-
-dropdown.classList.remove("open");
-
-
-});
-
-
+  document.addEventListener("click", () => {
+    dropdown.classList.remove("open");
+  });
 }
 
+const menuButton = document.querySelector(".mobile-toggle");
+const mobileMenu = document.querySelector(".mobile-nav");
 
-
-
-
-
-
-/* ==========================
-MOBILE MENU
-========================== */
-
-
-const menuButton =
-document.querySelector(".mobile-toggle");
-
-
-const mobileMenu =
-document.querySelector(".mobile-nav");
-
-
-
-if(menuButton && mobileMenu){
-
-
-menuButton.addEventListener(
-"click",
-()=>{
-
-
-mobileMenu.classList.toggle("open");
-
-
-});
-
-
+if (menuButton && mobileMenu) {
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+  });
 }
-
-
-
-
-
-
 </script>
