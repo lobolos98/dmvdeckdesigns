@@ -1,0 +1,261 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const stripeLink = "https://buy.stripe.com/9B600ke6FdEN21H1Cg3Nm05";
+---
+
+<BaseLayout
+  title="Complete Deck Planning Kit | DMV Deck Designs"
+  description="Plan your deck with confidence using the DMV Deck Designs Complete Deck Planning Kit. Get professional planning worksheets, measurement checklists, budgeting tools, permit preparation guidance, and contractor checklists for $49."
+>
+  <section class="kit-hero page-hero">
+    <div class="kit-badge">DIY DECK PLANNING TOOLKIT</div>
+    <h1>Complete Deck Planning Kit</h1>
+    <h2>Plan Your Dream Deck Before You Spend Thousands</h2>
+    <p class="kit-lead">
+      Get organized before you hire a contractor or invest in professional plans.
+      This homeowner-focused digital kit helps you plan your deck, gather the right
+      information, understand your project requirements, and communicate your vision clearly.
+    </p>
+
+    <div class="kit-price-card">
+      <div class="kit-price">$49</div>
+      <div class="kit-price-note">One-time payment • Digital product</div>
+      <a class="button kit-buy" href={stripeLink}>Get the Deck Planning Kit</a>
+      <p class="kit-small">Secure checkout through Stripe.</p>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2>Everything You Need to Start Planning</h2>
+    <p class="kit-section-intro">
+      Stop guessing and start your deck project with a clear plan.
+    </p>
+
+    <div class="kit-grid">
+      <article class="kit-card">
+        <div class="kit-icon">📐</div>
+        <h3>Measure Your Space</h3>
+        <p>Use practical worksheets to organize the measurements and existing conditions needed for your project.</p>
+      </article>
+      <article class="kit-card">
+        <div class="kit-icon">🏡</div>
+        <h3>Plan Your Layout</h3>
+        <p>Work through deck size, placement, access, features, and design considerations before committing to a layout.</p>
+      </article>
+      <article class="kit-card">
+        <div class="kit-icon">💰</div>
+        <h3>Plan Your Budget</h3>
+        <p>Organize the major project cost categories so you can make better decisions before getting estimates.</p>
+      </article>
+      <article class="kit-card">
+        <div class="kit-icon">📋</div>
+        <h3>Prepare for Permits</h3>
+        <p>Use a preparation checklist to identify common project information and documents you may need.</p>
+      </article>
+      <article class="kit-card">
+        <div class="kit-icon">🔨</div>
+        <h3>Work With Contractors</h3>
+        <p>Prepare questions and project information so you can communicate your expectations clearly.</p>
+      </article>
+      <article class="kit-card">
+        <div class="kit-icon">✅</div>
+        <h3>Avoid Common Mistakes</h3>
+        <p>Follow a structured planning process before spending money on materials, contractors, or professional design.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="kit-section kit-included">
+    <h2>What's Included</h2>
+    <div class="kit-list-wrap">
+      <ul>
+        <li>Deck project planning worksheet</li>
+        <li>Property and site measurement checklist</li>
+        <li>Existing-condition planning guide</li>
+        <li>Deck layout and design planning worksheets</li>
+        <li>Material selection worksheet</li>
+        <li>Budget planning worksheet</li>
+        <li>Permit preparation checklist</li>
+        <li>Contractor interview and communication checklist</li>
+        <li>Project timeline planner</li>
+        <li>Homeowner final planning checklist</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="kit-section kit-who">
+    <h2>Who Is This For?</h2>
+    <div class="kit-audience">
+      <p>✔ Homeowners planning a new deck</p>
+      <p>✔ Homeowners replacing an existing deck</p>
+      <p>✔ Homeowners considering a deck expansion</p>
+      <p>✔ Anyone preparing to speak with a deck contractor</p>
+      <p>✔ Anyone considering professional deck design services</p>
+    </div>
+  </section>
+
+  <section class="kit-section kit-cta">
+    <h2>Start Your Deck Project With a Plan</h2>
+    <p>
+      For $49, get the planning tools you need to organize your project before moving forward.
+    </p>
+    <a class="button" href={stripeLink}>Get Your Deck Planning Kit — $49</a>
+  </section>
+
+  <section class="kit-upgrade">
+    <h2>Ready for Professional Permit-Ready Plans?</h2>
+    <p>
+      The Planning Kit helps you organize your project. When you're ready for professional
+      deck design, DMV Deck Designs offers custom permit-ready plans and professional CAD drawings.
+    </p>
+    <a class="button secondary" href="/purchase/">View Professional Design Packages</a>
+  </section>
+
+  <style>
+    .kit-hero {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 65px 25px 55px;
+    }
+
+    .kit-badge {
+      display: inline-block;
+      background: #1b365d;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .kit-hero h1 {
+      font-size: clamp(42px, 7vw, 64px);
+      margin-bottom: 15px;
+    }
+
+    .kit-hero h2 {
+      color: #1b365d;
+      margin-bottom: 25px;
+    }
+
+    .kit-lead {
+      max-width: 820px;
+      margin: 0 auto 30px;
+      font-size: 20px;
+    }
+
+    .kit-price-card {
+      max-width: 430px;
+      margin: 30px auto 0;
+      padding: 35px 25px;
+      background: #1b365d;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    }
+
+    .kit-price {
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .kit-price-note,
+    .kit-small {
+      color: #fff;
+    }
+
+    .kit-buy {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .kit-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 55px 25px;
+    }
+
+    .kit-section-intro {
+      margin-bottom: 35px;
+    }
+
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .kit-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 30px 22px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .kit-icon {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .kit-card h3 {
+      color: #1b365d;
+    }
+
+    .kit-list-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #f5f7fa;
+      border-radius: 12px;
+      padding: 30px 45px;
+    }
+
+    .kit-list-wrap li {
+      margin: 12px 0;
+      font-size: 18px;
+    }
+
+    .kit-audience {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .kit-audience p {
+      padding: 8px;
+      margin: 5px 0;
+    }
+
+    .kit-cta {
+      background: #f5f7fa;
+      border-radius: 15px;
+      margin-bottom: 45px;
+    }
+
+    .kit-upgrade {
+      background: #1b365d;
+      color: #fff;
+      text-align: center;
+      padding: 60px 25px;
+    }
+
+    .kit-upgrade h2,
+    .kit-upgrade p {
+      color: #fff;
+    }
+
+    @media (max-width: 800px) {
+      .kit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kit-list-wrap {
+        padding: 25px;
+      }
+    }
+  </style>
+</BaseLayout>
