@@ -11,27 +11,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h1>Thank You for Your Purchase!</h1>
     <h2>Your Deck Planning Kit Is Ready</h2>
     <p>
-      Your payment was completed successfully. We appreciate your purchase and hope the
-      DMV Deck Designs Complete Deck Planning Kit helps you organize your deck project.
+      Your payment was completed successfully. Your secure download is available below.
     </p>
 
     <div class="delivery-box">
-      <h3>Next Step</h3>
+      <h3>Download Your Kit</h3>
       <p>
-        Your digital kit should be delivered using the purchase delivery method configured
-        for your Stripe payment link.
+        Click the button below to securely retrieve your Deck Planning Kit. Your download
+        is verified through Stripe before the private PDF is delivered from Cloudflare R2.
       </p>
-      <p class="note">
-        If you do not receive your digital product, please contact DMV Deck Designs at
+      <a id="download-kit" class="button download-button" href="#">Download My Deck Planning Kit</a>
+      <p id="download-error" class="error" hidden>
+        We could not verify the payment session. Please return to your Stripe confirmation
+        page or contact DMV Deck Designs at
         <a href="mailto:info@dmvdeckdesigns.com">info@dmvdeckdesigns.com</a>.
       </p>
     </div>
 
     <div class="success-actions">
-      <a class="button" href="/">Return to DMV Deck Designs</a>
       <a class="button secondary" href="/purchase/">View Professional Design Packages</a>
+      <a class="button secondary" href="/">Return to DMV Deck Designs</a>
     </div>
   </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get("session_id");
+    const downloadButton = document.getElementById("download-kit");
+    const errorMessage = document.getElementById("download-error");
+
+    if (sessionId && downloadButton) {
+      downloadButton.href = `/api/download-kit?session_id=${encodeURIComponent(sessionId)}`;
+    } else {
+      downloadButton?.setAttribute("aria-disabled", "true");
+      downloadButton?.classList.add("disabled");
+      if (errorMessage) errorMessage.hidden = false;
+    }
+  </script>
 
   <style>
     .success-page {
@@ -80,6 +96,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .delivery-box h3 {
       color: #1b365d;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin: 12px 0 8px;
+      text-decoration: none;
+    }
+
+    .disabled {
+      opacity: .55;
+      pointer-events: none;
+    }
+
+    .error {
+      color: #b22234;
+      font-size: 14px;
     }
 
     .note {
