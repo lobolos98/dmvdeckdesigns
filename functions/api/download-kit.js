@@ -15,7 +15,7 @@ export async function onRequestGet(context) {
 
   try {
     const stripeResponse = await fetch(
-      `https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sessionId)}`,
+      `https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sessionId)}?expand[]=line_items.data.price`,
       {
         headers: {
           Authorization: `Bearer ${secretKey}`,
@@ -33,12 +33,16 @@ export async function onRequestGet(context) {
       return new Response("Payment has not been completed.", { status: 403 });
     }
 
-    // The Payment Link used for this product is intentionally checked server-side.
-    // This prevents a customer from presenting an unrelated paid Stripe session.
-    const expectedPaymentLink =
-      "https://buy.stripe.com/9B600ke6FdEN21H1Cg3Nm05";
+    // Verify the paid Checkout Session contains exactly one $49.00 USD line item.
+    // This avoids relying on the opaque Payment Link ID and prevents an unrelated
+    // low-value or differently priced Stripe session from unlocking the product.
+    const lineItems = session.line_items?.data || [];
+    const hasCorrectProduct = lineItems.length === 1 &&
+      lineItems[0]?.quantity === 1 &&
+      lineItems[0]?.price?.unit_amount === 4900 &&
+      lineItems[0]?.price?.currency === "usd";
 
-    if (session.payment_link && session.payment_link !== expectedPaymentLink.split("/buy/")[1]) {
+    if (!hasCorrectProduct) {
       return new Response("This payment is not associated with the Deck Planning Kit.", {
         status: 403,
       });
