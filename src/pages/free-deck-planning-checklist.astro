@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const nextUrl = `${Astro.url.origin}/free-deck-planning-checklist-thank-you/`;
+---
+
+<BaseLayout
+  title="Free Maryland Deck Planning Checklist | DMV Deck Designs"
+  description="Download the free Maryland Deck Planning Checklist from DMV Deck Designs and organize your deck project before you hire a designer or contractor."
+>
+  <div class="lead-page">
+    <section class="lead-hero">
+      <p class="eyebrow">FREE HOMEOWNER RESOURCE</p>
+      <h1>Planning a Deck in Maryland?</h1>
+      <h2>Start With the Right Information.</h2>
+      <p class="lead-copy">
+        Get the free Maryland Deck Planning Checklist and organize the key information you should have before moving forward with a deck project.
+      </p>
+      <a class="primary-button" href="#get-checklist">Get the Free Checklist</a>
+    </section>
+
+    <section class="checklist-benefits">
+      <div class="benefit-card"><h3>✓ Property Information</h3><p>Identify property details, existing conditions, measurements, and documents you'll want available.</p></div>
+      <div class="benefit-card"><h3>✓ Project Goals</h3><p>Clarify how you want to use the deck, where it should go, and which features matter most.</p></div>
+      <div class="benefit-card"><h3>✓ Permit Preparation</h3><p>Know what drawings, surveys, HOA information, and jurisdiction requirements may need attention.</p></div>
+      <div class="benefit-card"><h3>✓ Budget Planning</h3><p>Organize priorities and budget considerations before investing in professional design or construction.</p></div>
+    </section>
+
+    <section class="kit-callout">
+      <p class="eyebrow">READY TO GO FURTHER?</p>
+      <h2>Get the Complete Deck Planning Kit</h2>
+      <p>If you want a more detailed homeowner workbook with project-planning worksheets, checklists, and preparation tools, upgrade to the complete Deck Planning Kit for <strong>$49</strong>.</p>
+      <a class="primary-button" href="/deck-planning-kit/">Get the Complete Kit — $49</a>
+    </section>
+
+    <section class="lead-form-section" id="get-checklist">
+      <div class="form-card">
+        <p class="eyebrow">FREE DOWNLOAD</p>
+        <h2>Send Me the Free Checklist</h2>
+        <p>Enter your email and we'll send you to the download page.</p>
+        <form action="https://formsubmit.co/info@dmvdeckdesigns.com" method="POST">
+          <input type="hidden" name="_subject" value="New DMV Deck Designs Free Checklist Lead" />
+          <input type="hidden" name="_next" value={nextUrl} />
+          <input type="hidden" name="_captcha" value="false" />
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          <button type="submit">Get My Free Checklist</button>
+        </form>
+        <p class="privacy-note">Your email is used to deliver the checklist and follow up about DMV Deck Designs resources. You can opt out of future messages.</p>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .lead-page { max-width: 1100px; margin: 0 auto; padding: 30px 20px 70px; text-align: center; font-family: Roboto, sans-serif; }
+    .lead-hero { padding: 70px 20px 55px; }
+    .eyebrow { font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    h1, h2, h3 { font-family: Oswald, sans-serif; }
+    .lead-hero h1 { font-size: clamp(2.3rem, 6vw, 4.5rem); line-height: 1.05; margin: 0; }
+    .lead-hero h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 12px 0 20px; }
+    .lead-copy { max-width: 760px; margin: 0 auto 28px; font-size: 1.15rem; line-height: 1.7; }
+    .primary-button, .lead-form-section button { display: inline-block; border: 0; border-radius: 6px; padding: 14px 24px; font-weight: 700; text-decoration: none; cursor: pointer; font-size: 1rem; }
+    .checklist-benefits { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin: 10px 0 55px; }
+    .benefit-card { padding: 26px; border-radius: 10px; text-align: left; }
+    .benefit-card h3 { margin-top: 0; font-size: 1.35rem; }
+    .benefit-card p, .kit-callout p, .form-card p { line-height: 1.65; }
+    .kit-callout { padding: 45px 25px; border-radius: 12px; margin-bottom: 55px; }
+    .kit-callout h2 { font-size: 2.1rem; margin: 0 0 10px; }
+    .lead-form-section { display: flex; justify-content: center; }
+    .form-card { width: min(620px, 100%); padding: 38px 28px; border-radius: 12px; }
+    .form-card h2 { font-size: 2rem; margin: 0 0 8px; }
+    form { display: grid; gap: 10px; text-align: left; margin-top: 24px; }
+    label { font-weight: 700; }
+    input { width: 100%; box-sizing: border-box; padding: 14px; border: 1px solid #bbb; border-radius: 5px; font-size: 1rem; }
+    .privacy-note { font-size: .8rem; margin-top: 14px; }
+    @media (max-width: 700px) { .checklist-benefits { grid-template-columns: 1fr; } .lead-hero { padding-top: 40px; } }
+  </style>
+</BaseLayout>
