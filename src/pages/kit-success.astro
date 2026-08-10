@@ -1,0 +1,239 @@
+---
+const title = "Purchase Complete | DMV Deck Designs";
+const description = "Your DMV Deck Designs Complete Deck Planning Kit is ready for secure download.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <main class="success-page">
+      <div class="brand">DMV <span>DECK DESIGNS</span></div>
+
+      <section class="card" aria-labelledby="success-title">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <p class="eyebrow">PURCHASE COMPLETE</p>
+        <h1 id="success-title">Your Deck Planning Kit Is Ready</h1>
+        <p class="intro">
+          Thank you for your purchase. Your professional homeowner planning workbook is ready
+          to download.
+        </p>
+
+        <div class="download-panel">
+          <h2>Complete Deck Planning Kit</h2>
+          <p>
+            Your secure download is verified through Stripe before the private PDF is delivered
+            from Cloudflare R2.
+          </p>
+          <a id="download-kit" class="download-button" href="#">
+            Download My Deck Planning Kit
+          </a>
+          <p id="download-error" class="error" hidden>
+            We could not find your verified payment session. Please use the link from your
+            Stripe confirmation or contact
+            <a href="mailto:info@dmvdeckdesigns.com">info@dmvdeckdesigns.com</a>.
+          </p>
+        </div>
+
+        <div class="next-step">
+          <strong>Ready for professional deck plans?</strong>
+          <p>
+            When you're ready to move from planning to professional design, explore our deck
+            design packages.
+          </p>
+          <a class="secondary-button" href="/purchase/">View Professional Design Packages</a>
+        </div>
+      </section>
+
+      <footer>
+        <p><strong>DMV Deck Designs</strong></p>
+        <p>Professional Deck Design Services</p>
+        <p>Maryland • Northern Virginia • Washington DC</p>
+        <p><a href="mailto:info@dmvdeckdesigns.com">info@dmvdeckdesigns.com</a></p>
+        <p class="copyright">© {new Date().getFullYear()} DMV Deck Designs. All rights reserved.</p>
+      </footer>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get("session_id");
+      const downloadButton = document.getElementById("download-kit");
+      const errorMessage = document.getElementById("download-error");
+
+      if (sessionId && downloadButton) {
+        downloadButton.href = `/api/download-kit?session_id=${encodeURIComponent(sessionId)}`;
+      } else {
+        downloadButton?.setAttribute("aria-disabled", "true");
+        downloadButton?.classList.add("disabled");
+        if (errorMessage) errorMessage.hidden = false;
+      }
+    </script>
+
+    <style>
+      :global(*) { box-sizing: border-box; }
+      :global(html) { min-height: 100%; background: #f4f7fa; }
+      :global(body) {
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #17212b;
+        background: #f4f7fa;
+      }
+      :global(a) { color: inherit; }
+
+      .success-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 34px 18px 45px;
+      }
+
+      .brand {
+        color: #17365d;
+        font-weight: 800;
+        letter-spacing: .08em;
+        font-size: 21px;
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .brand span { font-weight: 500; }
+
+      .card {
+        width: min(760px, 100%);
+        background: #fff;
+        border: 1px solid #dfe5eb;
+        border-radius: 18px;
+        box-shadow: 0 14px 45px rgba(23, 54, 93, .10);
+        text-align: center;
+        padding: 54px clamp(22px, 6vw, 65px) 48px;
+      }
+
+      .success-icon {
+        width: 78px;
+        height: 78px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #1f7a4d;
+        color: #fff;
+        font-size: 42px;
+        font-weight: 700;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: #1f7a4d;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: .16em;
+      }
+
+      h1 {
+        margin: 0;
+        color: #17365d;
+        font-size: clamp(34px, 6vw, 54px);
+        line-height: 1.08;
+      }
+
+      .intro {
+        max-width: 600px;
+        margin: 18px auto 30px;
+        color: #53606d;
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .download-panel {
+        padding: 28px;
+        border-radius: 14px;
+        background: #eef3f8;
+        border: 1px solid #d6e0ea;
+      }
+
+      .download-panel h2 {
+        margin: 0 0 8px;
+        color: #17365d;
+        font-size: 23px;
+      }
+
+      .download-panel p {
+        max-width: 540px;
+        margin: 0 auto 20px;
+        color: #596572;
+        line-height: 1.6;
+      }
+
+      .download-button {
+        display: inline-block;
+        padding: 16px 27px;
+        border-radius: 8px;
+        background: #b22234;
+        color: #fff;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 800;
+        box-shadow: 0 5px 14px rgba(178,34,52,.22);
+        transition: transform .15s ease, opacity .15s ease;
+      }
+
+      .download-button:hover { transform: translateY(-1px); opacity: .93; }
+      .download-button.disabled { opacity: .45; pointer-events: none; }
+
+      .error {
+        margin-top: 15px !important;
+        margin-bottom: 0 !important;
+        color: #b22234 !important;
+        font-size: 14px;
+      }
+
+      .next-step {
+        margin-top: 34px;
+        padding-top: 28px;
+        border-top: 1px solid #e2e6ea;
+      }
+
+      .next-step strong { color: #17365d; font-size: 18px; }
+      .next-step p { color: #596572; line-height: 1.55; }
+
+      .secondary-button {
+        display: inline-block;
+        padding: 12px 20px;
+        border: 2px solid #17365d;
+        border-radius: 7px;
+        color: #17365d;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .secondary-button:hover { background: #17365d; color: #fff; }
+
+      footer {
+        width: min(760px, 100%);
+        padding: 27px 10px 0;
+        text-align: center;
+        color: #697581;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      footer p { margin: 3px 0; }
+      footer a { color: #17365d; font-weight: 600; }
+      footer .copyright { margin-top: 12px; font-size: 12px; color: #8a949d; }
+
+      @media (max-width: 600px) {
+        .success-page { padding-top: 24px; }
+        .card { padding: 38px 18px 35px; border-radius: 14px; }
+        .download-panel { padding: 23px 16px; }
+        .download-button { width: 100%; padding-left: 10px; padding-right: 10px; }
+      }
+    </style>
+  </body>
+</html>
