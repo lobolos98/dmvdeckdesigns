@@ -5,25 +5,29 @@ const nextUrl = `${Astro.url.origin}/free-deck-planning-checklist-thank-you/`;
 ---
 
 <BaseLayout
-  title="Free Maryland Deck Planning Checklist | DMV Deck Designs"
-  description="Download the free Maryland Deck Planning Checklist from DMV Deck Designs and organize your deck project before you hire a designer or contractor."
+  title="Free DMV Deck Planning Checklist | Maryland DC Virginia"
+  description="Get the free DMV Deck Planning Checklist for Maryland, Washington DC, and Virginia. Enter your email to access the printable homeowner checklist."
 >
   <div class="lead-page">
     <section class="lead-hero">
-      <p class="eyebrow">FREE HOMEOWNER RESOURCE</p>
-      <h1>Planning a Deck in Maryland?</h1>
+      <p class="eyebrow">FREE DMV HOMEOWNER RESOURCE</p>
+      <h1>Planning a Deck in Maryland, DC or Virginia?</h1>
       <h2>Start With the Right Information.</h2>
-      <p class="lead-copy">
-        Get the free Maryland Deck Planning Checklist and organize the key information you should have before moving forward with a deck project.
-      </p>
+      <p class="lead-copy">Get the free DMV Deck Planning Checklist and organize the information you should have before moving forward with a deck project.</p>
       <a class="primary-button" href="#get-checklist">Get the Free Checklist</a>
     </section>
 
     <section class="checklist-benefits">
-      <div class="benefit-card"><h3>✓ Property Information</h3><p>Identify property details, existing conditions, measurements, and documents you'll want available.</p></div>
-      <div class="benefit-card"><h3>✓ Project Goals</h3><p>Clarify how you want to use the deck, where it should go, and which features matter most.</p></div>
-      <div class="benefit-card"><h3>✓ Permit Preparation</h3><p>Know what drawings, surveys, HOA information, and jurisdiction requirements may need attention.</p></div>
-      <div class="benefit-card"><h3>✓ Budget Planning</h3><p>Organize priorities and budget considerations before investing in professional design or construction.</p></div>
+      <div class="benefit-card"><h3>✓ Property & Site Information</h3><p>Organize property details, existing conditions, measurements, access, and site information.</p></div>
+      <div class="benefit-card"><h3>✓ Project Goals & Layout</h3><p>Clarify intended use, deck location, size, stairs, railings, features, and priorities.</p></div>
+      <div class="benefit-card"><h3>✓ DMV Permit Preparation</h3><p>Prepare for jurisdiction-specific requirements in Maryland, Washington DC, and Virginia, including zoning, permits, drawings, surveys, and HOA documents.</p></div>
+      <div class="benefit-card"><h3>✓ Budget & Design Priorities</h3><p>Organize your budget, material preferences, must-have features, and questions before professional design.</p></div>
+    </section>
+
+    <section class="jurisdiction-section">
+      <p class="eyebrow">BUILT FOR THE DMV</p>
+      <h2>Maryland • Washington DC • Virginia</h2>
+      <p>The checklist helps homeowners identify the local jurisdiction, gather the right project information, and prepare questions about permits, zoning, setbacks, HOA requirements, drawings, and inspections. Requirements vary by municipality and project, so always verify current requirements with the applicable authority.</p>
     </section>
 
     <section class="kit-callout">
@@ -36,12 +40,13 @@ const nextUrl = `${Astro.url.origin}/free-deck-planning-checklist-thank-you/`;
     <section class="lead-form-section" id="get-checklist">
       <div class="form-card">
         <p class="eyebrow">FREE DOWNLOAD</p>
-        <h2>Send Me the Free Checklist</h2>
-        <p>Enter your email and we'll send you to the download page.</p>
+        <h2>Enter Your Email to Get the Checklist</h2>
+        <p>Your checklist is delivered through the download page after you submit your email.</p>
         <form action="https://formsubmit.co/info@dmvdeckdesigns.com" method="POST">
           <input type="hidden" name="_subject" value="New DMV Deck Designs Free Checklist Lead" />
           <input type="hidden" name="_next" value={nextUrl} />
           <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
           <label for="email">Email Address</label>
           <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
           <button type="submit">Get My Free Checklist</button>
@@ -60,10 +65,12 @@ const nextUrl = `${Astro.url.origin}/free-deck-planning-checklist-thank-you/`;
     .lead-hero h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 12px 0 20px; }
     .lead-copy { max-width: 760px; margin: 0 auto 28px; font-size: 1.15rem; line-height: 1.7; }
     .primary-button, .lead-form-section button { display: inline-block; border: 0; border-radius: 6px; padding: 14px 24px; font-weight: 700; text-decoration: none; cursor: pointer; font-size: 1rem; }
-    .checklist-benefits { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin: 10px 0 55px; }
+    .checklist-benefits { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin: 10px 0 40px; }
     .benefit-card { padding: 26px; border-radius: 10px; text-align: left; }
     .benefit-card h3 { margin-top: 0; font-size: 1.35rem; }
-    .benefit-card p, .kit-callout p, .form-card p { line-height: 1.65; }
+    .benefit-card p, .jurisdiction-section p, .kit-callout p, .form-card p { line-height: 1.65; }
+    .jurisdiction-section { padding: 35px 25px; margin-bottom: 45px; border-radius: 12px; }
+    .jurisdiction-section h2 { font-size: 2.1rem; margin: 0 0 12px; }
     .kit-callout { padding: 45px 25px; border-radius: 12px; margin-bottom: 55px; }
     .kit-callout h2 { font-size: 2.1rem; margin: 0 0 10px; }
     .lead-form-section { display: flex; justify-content: center; }
