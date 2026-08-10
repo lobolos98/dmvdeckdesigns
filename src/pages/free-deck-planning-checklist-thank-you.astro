@@ -3,14 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Your Free Deck Planning Checklist | DMV Deck Designs"
-  description="Your free Maryland Deck Planning Checklist is ready from DMV Deck Designs."
+  title="Your Free DMV Deck Planning Checklist | Maryland DC Virginia"
+  description="Your free DMV Deck Planning Checklist for Maryland, Washington DC, and Virginia."
 >
   <div class="thanks-page">
     <section class="thanks-hero no-print">
       <p class="eyebrow">YOU'RE IN</p>
-      <h1>Your Free Deck Planning Checklist Is Ready.</h1>
-      <p>Use this practical checklist to organize your project before requesting professional deck plans.</p>
+      <h1>Your Free DMV Deck Planning Checklist Is Ready.</h1>
+      <p>Use this practical checklist to organize your deck project before requesting professional design.</p>
       <button id="printChecklist" class="primary-button" type="button">Print / Save as PDF</button>
       <p class="print-help">When the print window opens, choose <strong>Save as PDF</strong> as the printer.</p>
     </section>
@@ -18,8 +18,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="checklist-document" id="checklistDocument">
       <header class="document-header">
         <p class="eyebrow">DMV DECK DESIGNS</p>
-        <h2>Maryland Deck Planning Checklist</h2>
-        <p>Use this worksheet to organize the information you'll want before moving forward with professional deck design.</p>
+        <h2>DMV Deck Planning Checklist</h2>
+        <p class="region-line"><strong>Maryland • Washington, DC • Virginia</strong></p>
+        <p>Use this worksheet to organize the information you'll want before moving forward with professional deck design. Local requirements vary by jurisdiction.</p>
       </header>
 
       <section class="check-section">
@@ -33,7 +34,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
 
       <section class="check-section">
-        <h3>2. Project Goals</h3>
+        <h3>2. Choose Your DMV Jurisdiction</h3>
+        <label><input type="checkbox" /> Maryland</label>
+        <label><input type="checkbox" /> Washington, DC</label>
+        <label><input type="checkbox" /> Virginia</label>
+        <p class="small-note">Identify the specific county, city, municipality, or District agency that has jurisdiction over your property. Permit, zoning, setback, inspection, and submission requirements can differ by location.</p>
+      </section>
+
+      <section class="check-section">
+        <h3>3. Project Goals & Layout</h3>
         <label><input type="checkbox" /> Primary use identified: dining, entertaining, relaxing, etc.</label>
         <label><input type="checkbox" /> Preferred deck location identified</label>
         <label><input type="checkbox" /> Approximate deck size considered</label>
@@ -43,7 +52,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
 
       <section class="check-section">
-        <h3>3. Materials & Style</h3>
+        <h3>4. Materials & Style</h3>
         <label><input type="checkbox" /> Wood or composite preference considered</label>
         <label><input type="checkbox" /> Color and finish preferences noted</label>
         <label><input type="checkbox" /> House style and exterior materials considered</label>
@@ -51,17 +60,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
 
       <section class="check-section">
-        <h3>4. Documents & Permit Preparation</h3>
+        <h3>5. Permit & Document Preparation</h3>
         <label><input type="checkbox" /> Survey or site plan available</label>
+        <label><input type="checkbox" /> Local permit authority identified</label>
+        <label><input type="checkbox" /> Zoning and setback questions identified</label>
         <label><input type="checkbox" /> HOA requirements checked, if applicable</label>
-        <label><input type="checkbox" /> Local permit jurisdiction identified</label>
         <label><input type="checkbox" /> Existing plans or prior permits gathered, if available</label>
         <label><input type="checkbox" /> Property photos organized</label>
-        <label><input type="checkbox" /> Zoning / setback questions identified</label>
+        <label><input type="checkbox" /> Questions about required drawings and inspections noted</label>
       </section>
 
       <section class="check-section">
-        <h3>5. Budget & Priorities</h3>
+        <h3>6. Maryland / DC / Virginia Readiness</h3>
+        <label><input type="checkbox" /> Maryland: county or municipal requirements verified, if applicable</label>
+        <label><input type="checkbox" /> Washington, DC: applicable District permitting and zoning requirements identified</label>
+        <label><input type="checkbox" /> Virginia: city or county requirements verified, if applicable</label>
+        <label><input type="checkbox" /> HOA or community requirements reviewed</label>
+        <label><input type="checkbox" /> Current requirements confirmed with the applicable authority before submission</label>
+      </section>
+
+      <section class="check-section">
+        <h3>7. Budget & Priorities</h3>
         <label><input type="checkbox" /> Target project budget established</label>
         <label><input type="checkbox" /> Must-have features separated from nice-to-have features</label>
         <label><input type="checkbox" /> Design / permit costs considered separately from construction</label>
@@ -69,8 +88,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
 
       <section class="notes-section">
-        <h3>6. Questions & Notes</h3>
+        <h3>8. Questions & Notes</h3>
         <p>Write down questions you want answered before moving forward.</p>
+        <div class="note-lines"></div>
         <div class="note-lines"></div>
         <div class="note-lines"></div>
         <div class="note-lines"></div>
@@ -87,7 +107,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="kit-callout no-print">
       <p class="eyebrow">WANT THE COMPLETE WORKBOOK?</p>
       <h2>Take Your Planning Further</h2>
-      <p>The Complete Deck Planning Kit expands this free checklist into a detailed homeowner planning workbook for <strong>$49</strong>.</p>
+      <p>The Complete Deck Planning Kit expands this free DMV checklist into a detailed homeowner planning workbook for <strong>$49</strong>.</p>
       <a class="primary-button" href="/deck-planning-kit/">Get the Complete Kit — $49</a>
     </section>
 
@@ -114,11 +134,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .checklist-document { text-align: left; background: #fff; border: 1px solid #d7d7d7; border-radius: 12px; padding: 42px; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
     .document-header { text-align: center; border-bottom: 2px solid #222; padding-bottom: 22px; margin-bottom: 28px; }
     .document-header h2 { font-size: 2.6rem; margin: 0 0 8px; }
+    .region-line { font-size: 1.15rem; margin: 0 0 10px; }
     .document-header p:last-child { line-height: 1.6; }
     .check-section { margin: 0 0 26px; break-inside: avoid; }
     .check-section h3, .notes-section h3 { font-size: 1.35rem; margin: 0 0 12px; border-bottom: 1px solid #bbb; padding-bottom: 7px; }
     .check-section label { display: block; padding: 6px 0; line-height: 1.45; }
     input[type="checkbox"] { width: 17px; height: 17px; margin-right: 9px; vertical-align: -3px; }
+    .small-note { font-size: .9rem; line-height: 1.6; margin-top: 10px; }
     .notes-section { margin-top: 28px; break-inside: avoid; }
     .notes-section p { margin-bottom: 14px; }
     .note-lines { border-bottom: 1px solid #999; height: 30px; }
