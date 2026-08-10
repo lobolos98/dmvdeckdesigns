@@ -7,33 +7,91 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="Your free Maryland Deck Planning Checklist is ready from DMV Deck Designs."
 >
   <div class="thanks-page">
-    <section class="thanks-hero">
+    <section class="thanks-hero no-print">
       <p class="eyebrow">YOU'RE IN</p>
       <h1>Your Free Deck Planning Checklist Is Ready.</h1>
-      <p>Use this checklist to organize your project before you request professional deck plans.</p>
-      <button id="downloadChecklist" class="primary-button" type="button">Download My Free PDF Checklist</button>
-      <p id="downloadStatus" class="status" aria-live="polite"></p>
+      <p>Use this practical checklist to organize your project before requesting professional deck plans.</p>
+      <button id="printChecklist" class="primary-button" type="button">Print / Save as PDF</button>
+      <p class="print-help">When the print window opens, choose <strong>Save as PDF</strong> as the printer.</p>
     </section>
 
-    <section class="preview-card">
-      <h2>What's Inside</h2>
-      <ul>
-        <li>Property and existing-condition information</li>
-        <li>Project goals and deck-use planning</li>
-        <li>Measurements, photos, surveys, and documents</li>
-        <li>Permit and HOA preparation reminders</li>
-        <li>Budget and next-step planning</li>
-      </ul>
+    <section class="checklist-document" id="checklistDocument">
+      <header class="document-header">
+        <p class="eyebrow">DMV DECK DESIGNS</p>
+        <h2>Maryland Deck Planning Checklist</h2>
+        <p>Use this worksheet to organize the information you'll want before moving forward with professional deck design.</p>
+      </header>
+
+      <section class="check-section">
+        <h3>1. Property & Existing Conditions</h3>
+        <label><input type="checkbox" /> Project address confirmed</label>
+        <label><input type="checkbox" /> Property survey or plat located</label>
+        <label><input type="checkbox" /> Existing deck / structure photos taken</label>
+        <label><input type="checkbox" /> House exterior and deck connection photographed</label>
+        <label><input type="checkbox" /> Property lines and approximate setbacks identified</label>
+        <label><input type="checkbox" /> Existing utilities, trees, slopes, or obstacles noted</label>
+      </section>
+
+      <section class="check-section">
+        <h3>2. Project Goals</h3>
+        <label><input type="checkbox" /> Primary use identified: dining, entertaining, relaxing, etc.</label>
+        <label><input type="checkbox" /> Preferred deck location identified</label>
+        <label><input type="checkbox" /> Approximate deck size considered</label>
+        <label><input type="checkbox" /> Desired shape or layout considered</label>
+        <label><input type="checkbox" /> Stairs and access points considered</label>
+        <label><input type="checkbox" /> Railings, privacy, lighting, or other features considered</label>
+      </section>
+
+      <section class="check-section">
+        <h3>3. Materials & Style</h3>
+        <label><input type="checkbox" /> Wood or composite preference considered</label>
+        <label><input type="checkbox" /> Color and finish preferences noted</label>
+        <label><input type="checkbox" /> House style and exterior materials considered</label>
+        <label><input type="checkbox" /> Photos or examples of preferred designs collected</label>
+      </section>
+
+      <section class="check-section">
+        <h3>4. Documents & Permit Preparation</h3>
+        <label><input type="checkbox" /> Survey or site plan available</label>
+        <label><input type="checkbox" /> HOA requirements checked, if applicable</label>
+        <label><input type="checkbox" /> Local permit jurisdiction identified</label>
+        <label><input type="checkbox" /> Existing plans or prior permits gathered, if available</label>
+        <label><input type="checkbox" /> Property photos organized</label>
+        <label><input type="checkbox" /> Zoning / setback questions identified</label>
+      </section>
+
+      <section class="check-section">
+        <h3>5. Budget & Priorities</h3>
+        <label><input type="checkbox" /> Target project budget established</label>
+        <label><input type="checkbox" /> Must-have features separated from nice-to-have features</label>
+        <label><input type="checkbox" /> Design / permit costs considered separately from construction</label>
+        <label><input type="checkbox" /> Desired project timeline considered</label>
+      </section>
+
+      <section class="notes-section">
+        <h3>6. Questions & Notes</h3>
+        <p>Write down questions you want answered before moving forward.</p>
+        <div class="note-lines"></div>
+        <div class="note-lines"></div>
+        <div class="note-lines"></div>
+        <div class="note-lines"></div>
+      </section>
+
+      <footer class="document-footer">
+        <strong>DMV Deck Designs</strong><br />
+        Professional deck design | Maryland | Virginia | Washington DC<br />
+        info@dmvdeckdesigns.com
+      </footer>
     </section>
 
-    <section class="kit-callout">
+    <section class="kit-callout no-print">
       <p class="eyebrow">WANT THE COMPLETE WORKBOOK?</p>
       <h2>Take Your Planning Further</h2>
-      <p>The Complete Deck Planning Kit expands the free checklist into a more detailed homeowner planning workbook for <strong>$49</strong>.</p>
+      <p>The Complete Deck Planning Kit expands this free checklist into a detailed homeowner planning workbook for <strong>$49</strong>.</p>
       <a class="primary-button" href="/deck-planning-kit/">Get the Complete Kit — $49</a>
     </section>
 
-    <section class="professional-next">
+    <section class="professional-next no-print">
       <h2>Ready for Professional Deck Plans?</h2>
       <p>When your project is ready for professional design, DMV Deck Designs can help you move from planning to detailed deck drawings.</p>
       <a class="secondary-button" href="/purchase/">View Professional Design Packages</a>
@@ -41,134 +99,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <script is:inline>
-    const button = document.getElementById('downloadChecklist');
-    const status = document.getElementById('downloadStatus');
-
-    function pdfEscape(value) {
-      return value.replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
-    }
-
-    function makePdf() {
-      const page1 = [
-        ['Maryland Deck Planning Checklist', 18],
-        ['DMV Deck Designs | Free Homeowner Resource', 11],
-        ['', 10],
-        ['PROPERTY + EXISTING CONDITIONS', 14],
-        ['[ ] Project address confirmed', 11],
-        ['[ ] Property survey or plat located', 11],
-        ['[ ] Existing deck or structure photos taken', 11],
-        ['[ ] House exterior and connection point photographed', 11],
-        ['[ ] Property lines and setbacks identified', 11],
-        ['[ ] Existing utilities or obstacles noted', 11],
-        ['', 10],
-        ['PROJECT GOALS', 14],
-        ['[ ] Primary use identified: dining, entertaining, relaxing, etc.', 11],
-        ['[ ] Desired deck location identified', 11],
-        ['[ ] Preferred deck shape and approximate size considered', 11],
-        ['[ ] Stairs and access points considered', 11],
-        ['[ ] Railings, privacy, lighting, or other features considered', 11],
-        ['', 10],
-        ['MATERIAL + STYLE', 14],
-        ['[ ] Wood or composite preference considered', 11],
-        ['[ ] Color and finish preferences noted', 11],
-        ['[ ] House style and existing exterior considered', 11],
-      ];
-
-      const page2 = [
-        ['Maryland Deck Planning Checklist - Page 2', 16],
-        ['', 10],
-        ['DOCUMENTS + PERMIT PREPARATION', 14],
-        ['[ ] Survey or site plan available', 11],
-        ['[ ] HOA requirements checked, if applicable', 11],
-        ['[ ] Local permit jurisdiction identified', 11],
-        ['[ ] Existing plans or prior permits gathered, if available', 11],
-        ['[ ] Property photos organized', 11],
-        ['[ ] Relevant zoning or setback questions identified', 11],
-        ['', 10],
-        ['BUDGET + PRIORITIES', 14],
-        ['[ ] Target project budget established', 11],
-        ['[ ] Must-have features separated from nice-to-have features', 11],
-        ['[ ] Design and permit costs considered separately from construction', 11],
-        ['[ ] Timeline or target completion date considered', 11],
-        ['', 10],
-        ['NEXT STEP', 14],
-        ['Write down the questions you want answered before moving forward.', 11],
-        ['', 8],
-        ['Notes:', 12],
-        ['____________________________________________________________', 10],
-        ['____________________________________________________________', 10],
-        ['____________________________________________________________', 10],
-        ['____________________________________________________________', 10],
-        ['', 8],
-        ['DMV Deck Designs', 12],
-        ['Professional deck design | Maryland | Virginia | Washington DC', 10],
-        ['info@dmvdeckdesigns.com', 10],
-      ];
-
-      const pages = [page1, page2];
-      const objects = [];
-      objects.push('<< /Type /Catalog /Pages 2 0 R >>');
-      objects.push('<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>');
-      objects.push('<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 6 0 R >>');
-      objects.push('<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 7 0 R >>');
-      objects.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
-
-      function stream(lines) {
-        let y = 748;
-        let out = 'BT\n';
-        for (const [text, size] of lines) {
-          if (text === '') { y -= 12; continue; }
-          out += `/F1 ${size} Tf\n72 ${y} Td\n(${pdfEscape(text)}) Tj\n0 -${size + 9} Td\n`;
-          y -= (size + 9);
-        }
-        out += 'ET';
-        return out;
-      }
-
-      objects.push(`<< /Length ${stream(pages[0]).length} >>\nstream\n${stream(pages[0])}\nendstream`);
-      objects.push(`<< /Length ${stream(pages[1]).length} >>\nstream\n${stream(pages[1])}\nendstream`);
-
-      let pdf = '%PDF-1.4\n';
-      const offsets = [0];
-      objects.forEach((obj, i) => {
-        offsets.push(pdf.length);
-        pdf += `${i + 1} 0 obj\n${obj}\nendobj\n`;
-      });
-      const xref = pdf.length;
-      pdf += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
-      for (let i = 1; i < offsets.length; i++) pdf += `${String(offsets[i]).padStart(10, '0')} 00000 n \n`;
-      pdf += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
-      return new Blob([pdf], { type: 'application/pdf' });
-    }
-
-    button?.addEventListener('click', () => {
-      const blob = makePdf();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'DMV-Deck-Planning-Checklist.pdf';
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-      if (status) status.textContent = 'Your PDF download has started.';
-    });
+    document.getElementById('printChecklist')?.addEventListener('click', () => window.print());
   </script>
 
   <style>
     .thanks-page { max-width: 950px; margin: 0 auto; padding: 30px 20px 70px; text-align: center; font-family: Roboto, sans-serif; }
-    .thanks-hero { padding: 70px 20px 45px; }
+    .thanks-hero { padding: 65px 20px 35px; }
     .eyebrow { font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
-    h1, h2 { font-family: Oswald, sans-serif; }
+    h1, h2, h3 { font-family: Oswald, sans-serif; }
     .thanks-hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.05; margin: 0 0 18px; }
     .thanks-hero p { font-size: 1.15rem; line-height: 1.7; }
     .primary-button, .secondary-button { display: inline-block; border: 0; border-radius: 6px; padding: 14px 24px; font-weight: 700; text-decoration: none; cursor: pointer; font-size: 1rem; }
-    .status { min-height: 1.2em; font-size: .9rem !important; }
-    .preview-card, .kit-callout, .professional-next { padding: 35px 25px; border-radius: 12px; margin: 20px 0; }
-    .preview-card { text-align: left; }
-    .preview-card h2 { text-align: center; }
-    .preview-card li { margin: 12px 0; line-height: 1.5; }
+    .print-help { font-size: .9rem !important; margin-top: 12px; }
+    .checklist-document { text-align: left; background: #fff; border: 1px solid #d7d7d7; border-radius: 12px; padding: 42px; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .document-header { text-align: center; border-bottom: 2px solid #222; padding-bottom: 22px; margin-bottom: 28px; }
+    .document-header h2 { font-size: 2.6rem; margin: 0 0 8px; }
+    .document-header p:last-child { line-height: 1.6; }
+    .check-section { margin: 0 0 26px; break-inside: avoid; }
+    .check-section h3, .notes-section h3 { font-size: 1.35rem; margin: 0 0 12px; border-bottom: 1px solid #bbb; padding-bottom: 7px; }
+    .check-section label { display: block; padding: 6px 0; line-height: 1.45; }
+    input[type="checkbox"] { width: 17px; height: 17px; margin-right: 9px; vertical-align: -3px; }
+    .notes-section { margin-top: 28px; break-inside: avoid; }
+    .notes-section p { margin-bottom: 14px; }
+    .note-lines { border-bottom: 1px solid #999; height: 30px; }
+    .document-footer { text-align: center; margin-top: 32px; padding-top: 18px; border-top: 1px solid #bbb; font-size: .85rem; line-height: 1.6; }
+    .kit-callout, .professional-next { padding: 35px 25px; border-radius: 12px; margin: 25px 0; }
     .kit-callout h2, .professional-next h2 { margin-top: 0; font-size: 2rem; }
     .kit-callout p, .professional-next p { line-height: 1.65; }
+    @media (max-width: 700px) { .checklist-document { padding: 25px 18px; } .document-header h2 { font-size: 2rem; } }
+    @media print {
+      @page { size: Letter; margin: .55in; }
+      body { background: #fff !important; }
+      .no-print, header, footer, .chatbot { display: none !important; }
+      .thanks-page { max-width: none; margin: 0; padding: 0; }
+      .checklist-document { border: 0; box-shadow: none; padding: 0; }
+      .check-section { break-inside: avoid; }
+    }
   </style>
 </BaseLayout>
