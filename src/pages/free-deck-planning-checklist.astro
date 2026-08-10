@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Free DMV Deck Planning Checklist | Maryland Virginia Washington DC"
+  description="Get the free DMV Deck Planning Checklist for Maryland, Northern Virginia, and Washington DC. Enter your email to access the homeowner planning checklist."
+>
+  <main class="gate-page">
+    <section class="gate-card">
+      <p class="eyebrow">FREE DMV HOMEOWNER RESOURCE</p>
+      <h1>DMV Deck Planning Checklist</h1>
+      <p class="region">Maryland • Northern Virginia • Washington DC</p>
+      <p class="intro">Get the free checklist to organize your property information, design decisions, documents, budget, and permit preparation before professional deck design.</p>
+
+      <form id="checklist-form" class="email-form">
+        <label for="email">Enter your email to access the free checklist</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+        <button class="primary-button" type="submit">Get My Free Checklist</button>
+        <p class="privacy">Your email is used to provide access to the checklist. We do not sell your information.</p>
+      </form>
+
+      <div class="included">
+        <h2>What's Included</h2>
+        <ul>
+          <li>Property and site information checklist</li>
+          <li>Deck goals, layout, access, and safety planning</li>
+          <li>Material and appearance decisions</li>
+          <li>Documents to gather before design</li>
+          <li>Maryland, Virginia, and Washington DC permit-preparation sections</li>
+          <li>Budget, priorities, and questions for your deck designer</li>
+        </ul>
+      </div>
+
+      <p class="kit-note">Want the complete planning workbook? <a href="/deck-planning-kit/">Explore the $49 Deck Planning Kit →</a></p>
+    </section>
+  </main>
+
+  <script>
+    const form = document.querySelector('#checklist-form');
+    const email = document.querySelector('#email');
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = email?.value.trim();
+      if (!value) return;
+      localStorage.setItem('dmvChecklistEmail', value);
+      window.location.href = '/free-deck-planning-checklist-thank-you/';
+    });
+  </script>
+
+  <style>
+    .gate-page{max-width:1000px;margin:0 auto;padding:60px 20px 80px;font-family:Roboto,sans-serif;color:#172033}.gate-card{text-align:center;max-width:780px;margin:0 auto;padding:55px 35px;border:1px solid #d7dce4;border-radius:12px;background:#fff;box-shadow:0 12px 35px rgba(0,0,0,.06)}.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.gate-card h1{font-family:Oswald,sans-serif;font-size:clamp(2.5rem,6vw,4.3rem);line-height:1;margin:12px 0}.region{font-size:1.2rem;font-weight:700}.intro{max-width:680px;margin:20px auto 30px;line-height:1.7;font-size:1.08rem}.email-form{max-width:520px;margin:0 auto;padding:28px;background:#f4f6f9;border-radius:10px}.email-form label{display:block;font-weight:700;margin-bottom:10px}.email-form input{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #bfc6d1;border-radius:6px;font-size:1rem;margin-bottom:12px}.primary-button{display:inline-block;width:100%;padding:14px 22px;border:0;border-radius:6px;font-weight:700;cursor:pointer;font-size:1rem}.privacy{font-size:.78rem;line-height:1.5;margin:12px 0 0}.included{text-align:left;margin:32px auto 0;max-width:620px}.included h2{font-family:Oswald,sans-serif;text-align:center;font-size:1.8rem}.included li{margin:9px 0;line-height:1.5}.kit-note{margin-top:32px;line-height:1.6}.kit-note a{font-weight:700}@media(max-width:600px){.gate-card{padding:38px 20px}.gate-page{padding-top:35px}}
+  </style>
+</BaseLayout>
